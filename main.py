@@ -23,22 +23,24 @@ def player_ids_by_year(year):
     return set(PLAYERS[PLAYERS["year"] == year]["player_id"])
 
 
-def new_draft_state(players_ids, year):
+def teams_by_year(year):
+    players_year = PLAYERS[PLAYERS["year"] == year]
+    teams = {team: [] for team in players_year["team"].dropna().unique()}
+    return teams
+
+
+def new_draft_state(year):
     return {
         "year": year,
         "round": 1,
         "pick": 1,
-        "available_players": players_ids,
-        "teams": {
-            "TEAM_1": [],
-            "TEAM_2": [],
-        },
+        "available_players": player_ids_by_year(year),
+        "teams": teams_by_year(year),
     }
 
 
 @app.post("/draft/start")
 def start_draft(year: int):
     draft_id = str(uuid4())  # UUIDs need to be JSON serializable
-    player_ids = player_ids_by_year(year)
-    DRAFTS[draft_id] = new_draft_state(player_ids)
+    DRAFTS[draft_id] = new_draft_state(year)
     return {"draft_id": draft_id}
