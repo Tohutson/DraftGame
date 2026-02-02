@@ -36,7 +36,7 @@ DRAFTS = {}
 
 
 def player_ids_by_year(year):
-    return set(PLAYERS_BY_YEAR[year]["player_id"])
+    return set(PLAYERS_BY_YEAR[year].index)
 
 
 def draft_order_by_year(year):
@@ -52,7 +52,7 @@ def draft_order_by_year(year):
             "team": row["team"],
             "player_id": None,
         }
-        for _, row in df.iterrows()
+        for player_id, row in df.iterrows()
     ]
 
 
@@ -117,11 +117,11 @@ def simulate_pick(draft):
     row = year_df[year_df["overall"] == overall]
 
     # Filter available players
-    available = year_df[year_df["player_id"].isin(draft["available_players"])]
+    available = year_df[year_df.index.isin(draft["available_players"])]
 
     # If real pick exists and available → take it
     if len(row) > 0:
-        pid = row.iloc[0]["player_id"]
+        pid = row.index[0]
         if pid in draft["available_players"]:
             draft_player(draft, pid)
             return
@@ -143,7 +143,7 @@ def simulate_pick(draft):
     else:
         best = available.sort_values("ovr_rk").iloc[0]
 
-    draft_player(draft, best["player_id"])
+    draft_player(draft, best.name)
 
 
 # -----------------------
@@ -255,12 +255,12 @@ def draft_board(draft_id: str):
 
 
 @app.get("/drafts/{draft_id}/available")
-def get_available_players(draft_id: int):
+def get_available_players(draft_id: str):
     draft = DRAFTS.get(draft_id)
     if not draft:
         raise HTTPException(status_code=404, detail="Draft not found")
 
-    year = draft["draft_year"]
+    year = draft["year"]
     available_ids = draft["available_players"]
 
     df = PLAYERS_BY_YEAR.get(year)
@@ -268,15 +268,15 @@ def get_available_players(draft_id: int):
         raise HTTPException(status_code=404, detail="No players for this draft year")
 
     # Filter available players
-    available_df = df[df["player_id"].isin(available_ids)]
+    available_df = df[df.index.isin(available_ids)]
 
     # Sort by overall
     available_df = available_df.sort_values("overall")
 
-    # Return summary fields 
+    # Return summary fields
     return [
         {
-            "player_id": int(row.player_id),
+            "player_id": int(row.name),
             "name": row.name,
             "position": row.position,
             "team": row.team,
@@ -289,6 +289,8 @@ def get_available_players(draft_id: int):
 
 @app.get("/players/{player_id}")
 def get_player(player_id: int):
+    if player_id not in PLAYERS.index:
+        raise HTTPException(404, "Player not found")
     player = PLAYERS.loc[player_id]
     stats = (
         PLAYER_STATS.loc[player_id].to_dict() if player_id in PLAYER_STATS.index else {}
@@ -296,7 +298,7 @@ def get_player(player_id: int):
     profile = PROFILES.loc[player_id].to_dict() if player_id in PROFILES.index else {}
 
     return {
-        "player_id": int(player.player_id),
+        "player_id": int(player.name),
         "name": player.name,
         "position": player.position,
         "team": player.team,
