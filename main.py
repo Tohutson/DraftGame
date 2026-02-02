@@ -15,8 +15,7 @@ def load_players():
     college_stats = pd.read_csv("data/college_statistics.csv")
     profiles = pd.read_csv("data/nfl_draft_profiles.csv")
 
-    full_players = players.merge(profiles, on="player_id", how="left")
-    return full_players, college_stats, profiles
+    return players, college_stats, profiles
 
 
 PLAYERS, PLAYER_STATS, PROFILES = load_players()
@@ -272,18 +271,18 @@ def get_available_players(draft_id: str):
 
     # Sort by overall
     available_df = available_df.sort_values("overall")
-
+    print(available_df.columns)
     # Return summary fields
     return [
         {
-            "player_id": int(row.name),
+            "player_id": int(player_id),
             "name": row.name,
             "position": row.position,
             "team": row.team,
             "age": int(row.age),
             "overall_rank": int(row.overall),
         }
-        for _, row in available_df.iterrows()
+        for player_id, row in available_df.iterrows()
     ]
 
 
