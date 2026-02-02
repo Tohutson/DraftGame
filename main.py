@@ -16,10 +16,14 @@ def load_players():
     profiles = pd.read_csv("data/nfl_draft_profiles.csv")
 
     full_players = players.merge(profiles, on="player_id", how="left")
-    return full_players, college_stats
+    return full_players, college_stats, profiles
 
 
-PLAYERS, PLAYER_STATS = load_players()
+PLAYERS, PLAYER_STATS, PROFILES = load_players()
+
+PLAYERS.set_index("player_id", inplace=True)
+PLAYER_STATS.set_index("player_id", inplace=True)
+PROFILES.set_index("player_id", inplace=True)
 
 # Pre-split by year
 PLAYERS_BY_YEAR = {year: df for year, df in PLAYERS.groupby("draft_year")}
@@ -247,4 +251,61 @@ def draft_board(draft_id: str):
         "current_index": draft["index"],
         "board": draft["draft_order"],
         "status": draft["status"],
+    }
+
+
+@app.get("/drafts/{draft_id}/available")
+def get_available_players(draft_id: int):
+    draft = DRAFTS.get(draft_id)
+    if not draft:
+        raise HTTPException(status_code=404, detail="Draft not found")
+
+    year = draft["draft_year"]
+    available_ids = draft["available_players"]
+
+    df = PLAYERS_BY_YEAR.get(year)
+    if df is None:
+        raise HTTPException(status_code=404, detail="No players for this draft year")
+
+    # Filter available players
+    available_df = df[df["player_id"].isin(available_ids)]
+
+    # Sort by overall
+    available_df = available_df.sort_values("overall")
+
+    # Return summary fields 
+    return [
+        {
+            "player_id": int(row.player_id),
+            "name": row.name,
+            "position": row.position,
+            "team": row.team,
+            "age": int(row.age),
+            "overall_rank": int(row.overall),
+        }
+        for _, row in available_df.iterrows()
+    ]
+
+
+@app.get("/players/{player_id}")
+def get_player(player_id: int):
+    player = PLAYERS.loc[player_id]
+    stats = (
+        PLAYER_STATS.loc[player_id].to_dict() if player_id in PLAYER_STATS.index else {}
+    )
+    profile = PROFILES.loc[player_id].to_dict() if player_id in PROFILES.index else {}
+
+    return {
+        "player_id": int(player.player_id),
+        "name": player.name,
+        "position": player.position,
+        "team": player.team,
+        "height": player.height,
+        "weight": player.weight,
+        "age": int(player.age),
+        "college": player.college,
+        "draft_year": int(player.draft_year),
+        "overall_rank": int(player.overall),
+        "stats": stats,
+        "profile": profile,
     }
