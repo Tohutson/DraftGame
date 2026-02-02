@@ -234,3 +234,17 @@ def pick(draft_id: str, player_id: int):
         "pick": draft["pick"],
         "status": draft["status"],
     }
+
+
+@app.get("/draft/{draft_id}/board")
+def draft_board(draft_id: str):
+    draft = DRAFTS.get(draft_id)
+    if not draft:
+        raise HTTPException(404, "Draft not found")
+
+    return {
+        "year": draft["year"],
+        "current_index": draft["index"],
+        "board": draft["draft_order"],
+        "status": draft["status"],
+    }
