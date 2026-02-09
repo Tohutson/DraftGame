@@ -40,8 +40,6 @@ def player_ids_by_year(year):
 
 def draft_order_by_year(year):
     df = PLAYERS_BY_YEAR[year].dropna(subset=["overall"]).sort_values("overall")
-    for _, row in df.iterrows():
-        print(row["overall"])
 
     return [
         {
@@ -253,6 +251,10 @@ def draft_board(draft_id: str):
     }
 
 
+def json_safe(val):
+    return None if pd.isna(val) else val
+
+
 @app.get("/drafts/{draft_id}/available")
 def get_available_players(draft_id: str):
     draft = DRAFTS.get(draft_id)
@@ -271,16 +273,16 @@ def get_available_players(draft_id: str):
 
     # Sort by overall
     available_df = available_df.sort_values("overall")
-    print(available_df.columns)
+    print(available_df[["height", "weight", "ovr_rk"]].head())
     # Return summary fields
     return [
         {
             "player_id": int(player_id),
-            "name": row.name,
-            "position": row.position,
-            "team": row.team,
-            "age": int(row.age),
-            "overall_rank": int(row.overall),
+            "name": row.player_name,
+            "position": json_safe(row.position),
+            "height": json_safe(row.height),
+            "weight": json_safe(row.weight),
+            "overall_rank": None if pd.isna(row.ovr_rk) else int(row.ovr_rk),
         }
         for player_id, row in available_df.iterrows()
     ]
@@ -303,10 +305,8 @@ def get_player(player_id: int):
         "team": player.team,
         "height": player.height,
         "weight": player.weight,
-        "age": int(player.age),
         "college": player.college,
-        "draft_year": int(player.draft_year),
-        "overall_rank": int(player.overall),
+        "overall_rank": None if pd.isna(row.ovr_rk) else int(row.ovr_rk),
         "stats": stats,
         "profile": profile,
     }
