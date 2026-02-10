@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function DraftSetup() {
     const [years, setYears] = useState([])
@@ -15,6 +16,8 @@ function DraftSetup() {
 
     const [startLoading, setStartLoading] = useState(false);
     const [startError, setStartError] = useState(null);
+
+    const navigate = useNavigate();
 
     const handleStartDraft = () => {
         setStartLoading(true);
@@ -35,7 +38,8 @@ function DraftSetup() {
                 return res.json();
             })
             .then((data) => {
-                console.log("Draft started: ", data);
+                const draftId = data.draft_id;
+                navigate(`/draft/${draftId}`);
             })
             .catch((err) => setStartError(err.message))
             .finally(() => setStartLoading(false));
@@ -44,6 +48,7 @@ function DraftSetup() {
     useEffect(() => {
         setYearsLoading(true);
         setYearsError(null);
+        console.log("Here");
 
         fetch("http://localhost:8000/draft/years")
             .then((res) => {
