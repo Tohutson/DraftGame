@@ -48,7 +48,6 @@ function DraftSetup() {
     useEffect(() => {
         setYearsLoading(true);
         setYearsError(null);
-        console.log("Here");
 
         fetch("http://localhost:8000/draft/years")
             .then((res) => {
