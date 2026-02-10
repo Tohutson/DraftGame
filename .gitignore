@@ -1,4 +1,7 @@
 data/
+node_modules/
+build/
+dist/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
