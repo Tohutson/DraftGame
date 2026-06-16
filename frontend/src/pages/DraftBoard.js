@@ -122,6 +122,20 @@ export default function DraftBoard() {
     }
   }
 
+  async function simulateRest() {
+    setBusy(true);
+    setError(null);
+    try {
+      const completed = await api.simulateRest(draftId);
+      setSelected(null);
+      await refresh(completed);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setBusy(false);
+    }
+  }
+
   if (loading) return <main className="app-shell"><p>Loading draft...</p></main>;
   if (error && !state) return <main className="app-shell"><p className="error">{error}</p></main>;
 
@@ -144,6 +158,11 @@ export default function DraftBoard() {
               <h2>{pick.fake_name} was {pick.real_name}</h2>
               <p>{pick.outcome_label} | Value delta {pick.value_delta}</p>
               <p>{pick.reveal_blurb}</p>
+              {pick.career_data_source && (
+                <p className="data-source">
+                  Career data: {pick.career_data_source} - {pick.career_data_quality}
+                </p>
+              )}
               <dl>
                 {Object.entries(pick.career_summary || {}).map(([key, value]) => (
                   <div key={key}><dt>{key.replaceAll("_", " ")}</dt><dd>{value}</dd></div>
@@ -182,10 +201,13 @@ export default function DraftBoard() {
         <div>
           <p className="eyebrow">Round {current?.round} | Pick {current?.overall}</p>
           <h1>{current?.team_name} on the clock</h1>
-          <p>Your team: {state?.user_team.name}</p>
+          <p>Your team: {state?.user_team.name} | Full draft: {state?.rounds} rounds</p>
         </div>
-        <div className={state?.is_user_on_clock ? "clock user" : "clock"}>
-          {state?.is_user_on_clock ? "Make your pick" : "Simulating"}
+        <div className="header-actions">
+          <button onClick={simulateRest} disabled={busy}>Sim Rest</button>
+          <div className={state?.is_user_on_clock ? "clock user" : "clock"}>
+            {state?.is_user_on_clock ? "Make your pick" : "Simulating"}
+          </div>
         </div>
       </header>
 
@@ -218,19 +240,21 @@ export default function DraftBoard() {
                 <th>College</th>
                 <th>Stats</th>
                 <th>Physical</th>
-                <th></th>
               </tr>
             </thead>
             <tbody>
               {filtered.map((player) => (
-                <tr key={player.hidden_id} className={selected?.hidden_id === player.hidden_id ? "selected" : ""}>
+                <tr
+                  key={player.hidden_id}
+                  className={selected?.hidden_id === player.hidden_id ? "selected clickable" : "clickable"}
+                  onClick={() => choosePlayer(player)}
+                >
                   <td>{player.rank}</td>
                   <td>{player.fake_name}</td>
                   <td>{player.position}</td>
                   <td>{player.college_team}</td>
                   <td>{statLine(player.college_stats)}</td>
                   <td>{physicalLine(player)}</td>
-                  <td><button onClick={() => choosePlayer(player)}>View</button></td>
                 </tr>
               ))}
             </tbody>
@@ -240,6 +264,9 @@ export default function DraftBoard() {
         <aside className="side-panel">
           <section>
             <h2>Team Needs</h2>
+            {state?.team_needs_source && (
+              <p className="data-source">Needs source: {state.team_needs_source}</p>
+            )}
             <div className="need-list">
               {(state?.team_needs || []).map((need) => <span key={need}>{need}</span>)}
             </div>
@@ -252,6 +279,14 @@ export default function DraftBoard() {
                 <h3>{selected.fake_name}</h3>
                 <p>{selected.position} | {selected.college_team}</p>
                 <p>{selected.scouting_blurb}</p>
+                {selected.scouting_report?.length ? (
+                  <div className="scouting-report">
+                    <h3>Scouting Report</h3>
+                    {selected.scouting_report.map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))}
+                  </div>
+                ) : null}
                 <p><strong>College:</strong> {statLine(selected.college_stats)}</p>
                 <p><strong>Physical:</strong> {physicalLine(selected)}</p>
                 <button className="primary" disabled={!state?.is_user_on_clock || busy} onClick={makePick}>

@@ -16,6 +16,7 @@ PUBLIC_PROSPECT_FIELDS = {
     "projected_round",
     "projected_pick",
     "scouting_blurb",
+    "scouting_report",
 }
 
 
@@ -25,13 +26,18 @@ PRIVATE_FIELDS = {
     "actual_draft",
     "career_summary",
     "career_value",
+    "career_data_source",
+    "career_data_quality",
+    "match_method",
     "outcome_label",
     "reveal_blurb",
 }
 
 
 def public_prospect(prospect: Dict[str, Any]) -> Dict[str, Any]:
-    return {field: prospect.get(field) for field in PUBLIC_PROSPECT_FIELDS}
+    payload = {field: prospect.get(field) for field in PUBLIC_PROSPECT_FIELDS}
+    payload["hidden_player_id"] = prospect.get("hidden_id")
+    return payload
 
 
 def assert_no_private_fields(payload: Any) -> None:
@@ -44,4 +50,3 @@ def assert_no_private_fields(payload: Any) -> None:
     elif isinstance(payload, list):
         for item in payload:
             assert_no_private_fields(item)
-

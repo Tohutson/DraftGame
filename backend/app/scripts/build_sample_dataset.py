@@ -2,6 +2,7 @@ import csv
 import hashlib
 import json
 import math
+import re
 from pathlib import Path
 from typing import Any, Dict, Iterable, List
 
@@ -20,40 +21,41 @@ LAST_NAMES = [
     "Sutton", "Warren", "Coleman", "Bishop", "Porter", "Griffin", "Lawson", "Hale",
 ]
 
-TEAMS = [
-    ("ARI", "Arizona Cardinals", ["WR", "EDGE", "CB"]),
-    ("ATL", "Atlanta Falcons", ["EDGE", "QB", "CB"]),
-    ("BAL", "Baltimore Ravens", ["OT", "WR", "EDGE"]),
-    ("BUF", "Buffalo Bills", ["WR", "S", "DT"]),
-    ("CAR", "Carolina Panthers", ["WR", "EDGE", "IOL"]),
-    ("CHI", "Chicago Bears", ["QB", "EDGE", "WR"]),
-    ("CIN", "Cincinnati Bengals", ["OT", "DT", "CB"]),
-    ("CLE", "Cleveland Browns", ["WR", "DT", "LB"]),
-    ("DAL", "Dallas Cowboys", ["OT", "RB", "LB"]),
-    ("DEN", "Denver Broncos", ["QB", "CB", "TE"]),
-    ("DET", "Detroit Lions", ["CB", "EDGE", "WR"]),
-    ("GB", "Green Bay Packers", ["CB", "OT", "RB"]),
-    ("HOU", "Houston Texans", ["DT", "CB", "WR"]),
-    ("IND", "Indianapolis Colts", ["CB", "WR", "TE"]),
-    ("JAX", "Jacksonville Jaguars", ["CB", "WR", "DT"]),
-    ("KC", "Kansas City Chiefs", ["WR", "OT", "CB"]),
-    ("LV", "Las Vegas Raiders", ["QB", "CB", "OT"]),
-    ("LAC", "Los Angeles Chargers", ["WR", "OT", "CB"]),
-    ("LAR", "Los Angeles Rams", ["EDGE", "OT", "CB"]),
-    ("MIA", "Miami Dolphins", ["IOL", "DT", "TE"]),
-    ("MIN", "Minnesota Vikings", ["QB", "EDGE", "IOL"]),
-    ("NE", "New England Patriots", ["QB", "WR", "OT"]),
-    ("NO", "New Orleans Saints", ["OT", "DT", "WR"]),
-    ("NYG", "New York Giants", ["WR", "QB", "CB"]),
-    ("NYJ", "New York Jets", ["OT", "WR", "S"]),
-    ("PHI", "Philadelphia Eagles", ["CB", "LB", "S"]),
-    ("PIT", "Pittsburgh Steelers", ["OT", "CB", "WR"]),
-    ("SEA", "Seattle Seahawks", ["IOL", "EDGE", "S"]),
-    ("SF", "San Francisco 49ers", ["OT", "CB", "IOL"]),
-    ("TB", "Tampa Bay Buccaneers", ["EDGE", "IOL", "CB"]),
-    ("TEN", "Tennessee Titans", ["OT", "WR", "EDGE"]),
-    ("WAS", "Washington Commanders", ["QB", "OT", "CB"]),
-]
+DEFAULT_NEEDS = ["QB", "OT", "EDGE", "WR", "CB", "DT", "IOL", "S", "LB", "TE", "RB"]
+MODERN_NEEDS = {
+    "ARI": ["WR", "EDGE", "CB"],
+    "ATL": ["EDGE", "QB", "CB"],
+    "BAL": ["OT", "WR", "EDGE"],
+    "BUF": ["WR", "S", "DT"],
+    "CAR": ["WR", "EDGE", "IOL"],
+    "CHI": ["QB", "EDGE", "WR"],
+    "CIN": ["OT", "DT", "CB"],
+    "CLE": ["WR", "DT", "LB"],
+    "DAL": ["OT", "RB", "LB"],
+    "DEN": ["QB", "CB", "TE"],
+    "DET": ["CB", "EDGE", "WR"],
+    "GB": ["CB", "OT", "RB"],
+    "HOU": ["DT", "CB", "WR"],
+    "IND": ["CB", "WR", "TE"],
+    "JAX": ["CB", "WR", "DT"],
+    "KC": ["WR", "OT", "CB"],
+    "LV": ["QB", "CB", "OT"],
+    "LAC": ["WR", "OT", "CB"],
+    "LAR": ["EDGE", "OT", "CB"],
+    "MIA": ["IOL", "DT", "TE"],
+    "MIN": ["QB", "EDGE", "IOL"],
+    "NE": ["QB", "WR", "OT"],
+    "NO": ["OT", "DT", "WR"],
+    "NYG": ["WR", "QB", "CB"],
+    "NYJ": ["OT", "WR", "S"],
+    "PHI": ["CB", "LB", "S"],
+    "PIT": ["OT", "CB", "WR"],
+    "SEA": ["IOL", "EDGE", "S"],
+    "SF": ["OT", "CB", "IOL"],
+    "TB": ["EDGE", "IOL", "CB"],
+    "TEN": ["OT", "WR", "EDGE"],
+    "WAS": ["QB", "OT", "CB"],
+}
 
 POSITION_MAP = {
     "QB": "QB",
@@ -76,7 +78,9 @@ POSITION_MAP = {
     "FS": "S",
     "SS": "S",
     "K": "K",
+    "PK": "K",
     "P": "P",
+    "LS": "IOL",
 }
 
 
@@ -119,6 +123,14 @@ def load_stats() -> Dict[str, Dict[str, float]]:
             stats.setdefault(player_id, {})
             stats[player_id][key] = stats[player_id].get(key, 0) + value
     return stats
+
+
+def load_profiles() -> Dict[str, Dict[str, Any]]:
+    profiles: Dict[str, Dict[str, Any]] = {}
+    with (RAW_DATA / "nfl_draft_profiles.csv").open(newline="", encoding="utf-8") as handle:
+        for row in csv.DictReader(handle):
+            profiles[row["player_id"]] = row
+    return profiles
 
 
 def key_stats(position: str, raw: Dict[str, float]) -> Dict[str, int]:
@@ -166,6 +178,25 @@ def career_summary(position: str, rank: int) -> tuple[Dict[str, int], float, str
     return summary, value, label
 
 
+def sanitized_profile(real_name: str, fake: str, profile: Dict[str, Any] | None) -> List[str]:
+    if not profile:
+        return []
+    names = [real_name]
+    parts = [part for part in real_name.split() if len(part) > 2]
+    names.extend(parts)
+    report: List[str] = []
+    for key in ("text1", "text2", "text3", "text4"):
+        text = clean(profile.get(key)) if profile else None
+        if not text:
+            continue
+        sanitized = str(text)
+        for name in sorted(set(names), key=len, reverse=True):
+            sanitized = re.sub(re.escape(name), fake, sanitized, flags=re.IGNORECASE)
+        if sanitized.strip():
+            report.append(sanitized.strip())
+    return report
+
+
 def read_prospects() -> Iterable[Dict[str, Any]]:
     with (RAW_DATA / "nfl_draft_prospects.csv").open(newline="", encoding="utf-8") as handle:
         yield from csv.DictReader(handle)
@@ -173,26 +204,43 @@ def read_prospects() -> Iterable[Dict[str, Any]]:
 
 def main() -> None:
     stats = load_stats()
+    profiles = load_profiles()
     prospects: List[Dict[str, Any]] = []
-    sample_year = 2021
     selected = [
         row for row in read_prospects()
-        if row["draft_year"] == str(sample_year) and as_int(row.get("overall")) is not None
-    ][:128]
+        if as_int(row.get("overall")) is not None and as_int(row.get("round")) is not None
+    ]
+    teams_by_id: Dict[str, Dict[str, Any]] = {}
     for row in selected:
         real_name = row["player_name"]
+        year = as_int(row["draft_year"])
         rank = as_int(row.get("overall")) or len(prospects) + 1
         position = POSITION_MAP.get(clean(row.get("pos_abbr")) or "", clean(row.get("pos_abbr")) or "ATH")
         college_stats = key_stats(position, stats.get(row["player_id"], {}))
         summary, value, label = career_summary(position, rank)
-        actual_team = clean(row.get("team_abbr")) or clean(row.get("team"))
+        actual_team = clean(row.get("team_abbr")) or clean(row.get("team")) or "NFL"
+        team_name = clean(row.get("team")) or actual_team
+        if actual_team not in teams_by_id:
+            offset = int(hashlib.sha256(actual_team.encode("utf-8")).hexdigest()[:4], 16)
+            default_needs = [
+                DEFAULT_NEEDS[(offset + index) % len(DEFAULT_NEEDS)]
+                for index in range(3)
+            ]
+            teams_by_id[actual_team] = {
+                "id": actual_team,
+                "name": team_name,
+                "abbreviation": actual_team,
+                "needs": MODERN_NEEDS.get(actual_team, default_needs),
+            }
+        fake = fake_name(f"{year}:{real_name}:{rank}")
+        report = sanitized_profile(real_name, fake, profiles.get(row["player_id"]))
         prospects.append(
             {
-                "hidden_id": f"p{rank:03d}",
+                "hidden_id": f"p{year}_{rank:03d}",
                 "real_player_id": row["player_id"],
                 "real_name": real_name,
-                "fake_name": fake_name(real_name),
-                "draft_year": sample_year,
+                "fake_name": fake,
+                "draft_year": year,
                 "rank": rank,
                 "position": position,
                 "college_team": clean(row.get("school")) or "Not available",
@@ -204,8 +252,9 @@ def main() -> None:
                 "projected_round": as_int(row.get("round")),
                 "projected_pick": as_int(row.get("overall")),
                 "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+                "scouting_report": report,
                 "actual_draft": {
-                    "year": sample_year,
+                    "year": year,
                     "round": as_int(row.get("round")),
                     "pick": as_int(row.get("pick")),
                     "overall": rank,
@@ -214,19 +263,16 @@ def main() -> None:
                 "career_summary": summary,
                 "career_value": value,
                 "outcome_label": label,
-                "reveal_blurb": f"{real_name} was selected {rank} overall in the {sample_year} NFL Draft. Sample career totals are cached for offline MVP play.",
+                "reveal_blurb": f"{real_name} was selected {rank} overall in the {year} NFL Draft. Sample career totals are cached for offline MVP play.",
             }
         )
 
     data = {
         "meta": {
-            "dataset": "sample",
-            "description": "Offline sample game data generated from bundled draft CSVs with deterministic fake names.",
+            "dataset": "full_local_cache",
+            "description": "Offline cached game data generated from bundled draft CSVs with deterministic fake names.",
         },
-        "teams": [
-            {"id": team_id, "name": name, "abbreviation": team_id.rstrip("2"), "needs": needs}
-            for team_id, name, needs in TEAMS
-        ],
+        "teams": sorted(teams_by_id.values(), key=lambda team: team["name"]),
         "prospects": prospects,
     }
     OUT_DIR.mkdir(parents=True, exist_ok=True)

@@ -48,6 +48,8 @@ def build_reveal(game: Dict[str, Any], prospects_by_id: Dict[str, Dict[str, Any]
                 "actual_draft": prospect.get("actual_draft"),
                 "career_summary": prospect.get("career_summary", {}),
                 "career_value": value,
+                "career_data_source": prospect.get("career_data_source", "fallback_sample"),
+                "career_data_quality": prospect.get("career_data_quality", "Sample fallback career data."),
                 "expected_value": expected,
                 "outcome_label": prospect.get("outcome_label"),
                 "reveal_blurb": prospect.get("reveal_blurb"),
@@ -79,9 +81,10 @@ def build_reveal(game: Dict[str, Any], prospects_by_id: Dict[str, Dict[str, Any]
                 "position": p["position"],
                 "college_team": p["college_team"],
                 "career_value": p.get("career_value", 0),
+                "career_data_source": p.get("career_data_source", "fallback_sample"),
+                "career_data_quality": p.get("career_data_quality", "Sample fallback career data."),
                 "outcome_label": p.get("outcome_label"),
             }
             for p in best_missed
         ],
     }
-

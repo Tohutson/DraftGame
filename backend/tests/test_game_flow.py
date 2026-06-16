@@ -1,16 +1,127 @@
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 import pytest
 from fastapi.testclient import TestClient
 
-from app.data_loader import get_data_loader
-from app.services.game_service import DraftGameService
-from app.services.prospect_service import PRIVATE_FIELDS
-from main import app
+
+class FakeNFLVerse:
+    def __init__(self):
+        self.draft_pick_calls = 0
+        self.roster_calls = 0
+        self.player_stat_calls = 0
+        self.version = 1
+
+    def draft_picks(self, years=None, force=False):
+        self.draft_pick_calls += 1
+        year = years[0]
+        suffix = "" if self.version == 1 else " II"
+        return [
+            {
+                "draft_year": year,
+                "overall": 1,
+                "round": 1,
+                "pick": 1,
+                "team": "STL",
+                "player_name": f"Real Quarterback{suffix}",
+                "position": "QB",
+                "college": "State",
+                "player_id": f"qb-{self.version}",
+            },
+            {
+                "draft_year": year,
+                "overall": 2,
+                "round": 1,
+                "pick": 2,
+                "team": "KC",
+                "player_name": "Real Receiver",
+                "position": "WR",
+                "college": "Tech",
+                "player_id": "wr-1",
+            },
+        ]
+
+    def rosters(self, seasons, force=False):
+        self.roster_calls += 1
+        season = seasons[0]
+        return [
+            {"season": season, "team": "STL", "player_name": "Roster QB", "player_id": "r1", "position": "QB", "age": 30},
+            {"season": season, "team": "KC", "player_name": "Roster WR", "player_id": "r2", "position": "WR", "age": 28},
+        ]
+
+    def player_stats(self, seasons, force=False):
+        self.player_stat_calls += 1
+        return [
+            {
+                "season": seasons[0],
+                "week": 1,
+                "player_id": f"qb-{self.version}",
+                "player_name": f"Real Quarterback{'' if self.version == 1 else ' II'}",
+                "position": "QB",
+                "passing_yards": 300,
+                "passing_tds": 2,
+                "interceptions": 1,
+            },
+            {
+                "season": seasons[0],
+                "week": 1,
+                "player_id": "wr-1",
+                "player_name": "Real Receiver",
+                "position": "WR",
+                "receptions": 5,
+                "receiving_yards": 80,
+                "receiving_tds": 1,
+            },
+        ]
+
+    def seasonal_rosters(self, seasons, force=False):
+        return []
+
+    def weekly_rosters(self, seasons, force=False):
+        return []
+
+    def combine(self, years=None, force=False):
+        return [{"player_name": "Real Quarterback", "height": 75, "weight": 220, "forty": 4.8}]
 
 
-client = TestClient(app)
+class FakeCFBD:
+    available = False
+
+
+@pytest.fixture()
+def isolated_app(tmp_path, monkeypatch):
+    monkeypatch.setenv("DATA_CACHE_DIR", str(tmp_path))
+    monkeypatch.delenv("CFBD_API_KEY", raising=False)
+    monkeypatch.delenv("COLLEGE_FOOTBALL_DATA_API_KEY", raising=False)
+
+    import app.data_loader as data_loader
+    import app.services.game_service as game_service
+    from app.database import init_db
+
+    data_loader.get_data_loader.cache_clear()
+    game_service.GAMES.clear()
+    init_db()
+
+    fake_nfl = FakeNFLVerse()
+
+    from app.services.draft_year_data_service import DraftYearDataService
+
+    data_service = DraftYearDataService(nflverse=fake_nfl, cfbd=FakeCFBD())
+    monkeypatch.setattr(game_service, "get_draft_year_data_service", lambda: data_service)
+    import app.api.draft as draft_api
+
+    monkeypatch.setattr(draft_api, "get_draft_year_data_service", lambda: data_service)
+
+    import main
+
+    return TestClient(main.app), data_service, fake_nfl
 
 
 def assert_no_private_fields(payload):
+    from app.services.prospect_service import PRIVATE_FIELDS
+
     if isinstance(payload, dict):
         assert not PRIVATE_FIELDS.intersection(payload.keys())
         for value in payload.values():
@@ -20,111 +131,126 @@ def assert_no_private_fields(payload):
             assert_no_private_fields(item)
 
 
-def test_game_start_creates_valid_state_without_private_fields():
-    loader = get_data_loader()
-    year = loader.draft_years()[-1]
-    first_team = loader.teams()[0]["id"]
-    response = client.post(
-        "/api/games",
-        json={"draft_year": year, "user_team": first_team, "rounds": 1, "seed": 1},
-    )
+def test_db_initializes_correctly(tmp_path, monkeypatch):
+    monkeypatch.setenv("DATA_CACHE_DIR", str(tmp_path))
+    from app.database import table_counts
+
+    counts = table_counts()
+    assert counts["data_builds"] == 0
+    assert "prospects" in counts
+
+
+def test_missing_draft_year_triggers_build_and_persists(isolated_app):
+    client, _service, fake_nfl = isolated_app
+
+    response = client.post("/api/games", json={"draft_year": 2021, "user_team": "LAR", "rounds": 1, "seed": 1})
     assert response.status_code == 200
-    data = response.json()
-    assert data["game_id"]
-    assert data["status"] == "active"
-    assert data["current_pick"]["team_id"] == first_team
-    assert data["is_user_on_clock"] is True
-    assert_no_private_fields(data)
+    assert fake_nfl.draft_pick_calls == 1
+    assert response.json()["current_pick"]["team_id"] == "LAR"
+
+    status = client.get("/api/data/draft-years/2021/status").json()
+    assert status["status"] == "partial"
+    assert status["validation_summary"]["counts"]["prospects"] == 2
 
 
-def test_user_can_pick_only_when_on_clock():
-    year = get_data_loader().draft_years()[-1]
-    game = client.post(
-        "/api/games",
-        json={"draft_year": year, "user_team": "KC", "rounds": 1, "seed": 2},
-    ).json()
-    board = client.get(f"/api/games/{game['game_id']}/board").json()["prospects"]
-    blocked = client.post(
-        f"/api/games/{game['game_id']}/pick",
-        json={"hidden_id": board[0]["hidden_id"]},
-    )
-    assert blocked.status_code == 400
+def test_existing_valid_draft_year_does_not_refetch(isolated_app):
+    client, _service, fake_nfl = isolated_app
 
-    simulated = client.post(f"/api/games/{game['game_id']}/simulate").json()
-    assert simulated["is_user_on_clock"] is True
-    pick = client.post(
-        f"/api/games/{game['game_id']}/pick",
-        json={"hidden_id": board[-1]["hidden_id"]},
-    )
-    assert pick.status_code == 200
+    client.post("/api/games", json={"draft_year": 2021, "user_team": "LAR", "rounds": 1, "seed": 1})
+    client.post("/api/games", json={"draft_year": 2021, "user_team": "KC", "rounds": 1, "seed": 2})
+
+    assert fake_nfl.draft_pick_calls == 1
 
 
-def test_other_teams_simulate_without_duplicates_and_draft_ends():
-    service = DraftGameService()
-    year = service.loader.draft_years()[-1]
-    game = service.create_game(year, "KC", rounds=1, seed=3)
-    state = service.simulate_until_user_pick_or_complete(game)
-    assert state["is_user_on_clock"] is True
-    drafted_ids = [pick["hidden_id"] for pick in state["picks"]]
-    assert len(drafted_ids) == len(set(drafted_ids))
+def test_force_rebuild_replaces_data(isolated_app):
+    client, _service, fake_nfl = isolated_app
 
-    hidden_id = game["available_ids"][0]
-    service.make_user_pick(game, hidden_id)
-    final_state = service.simulate_until_user_pick_or_complete(game)
-    assert final_state["status"] == "complete"
-    all_ids = [pick["hidden_id"] for pick in game["picks"]]
-    assert len(all_ids) == len(set(all_ids))
+    client.post("/api/data/draft-years/2021/build?through_season=2021")
+    fake_nfl.version = 2
+    rebuilt = client.post("/api/data/draft-years/2021/build?through_season=2021&force=true")
+    assert rebuilt.status_code == 200
 
-
-def test_reveal_only_after_completion_and_includes_real_names():
-    year = get_data_loader().draft_years()[-1]
-    game = client.post(
-        "/api/games",
-        json={"draft_year": year, "user_team": "KC", "rounds": 1, "seed": 4},
-    ).json()
-    early = client.get(f"/api/games/{game['game_id']}/reveal")
-    assert early.status_code == 400
-
-    state = client.post(f"/api/games/{game['game_id']}/simulate").json()
-    board = client.get(f"/api/games/{game['game_id']}/board").json()["prospects"]
-    client.post(
-        f"/api/games/{game['game_id']}/pick",
-        json={"hidden_id": board[0]["hidden_id"]},
-    )
-    state = client.post(f"/api/games/{game['game_id']}/simulate").json()
-    assert state["status"] == "complete"
-    reveal = client.get(f"/api/games/{game['game_id']}/reveal").json()
-    assert reveal["user_picks"][0]["real_name"]
-    assert reveal["user_picks"][0]["career_summary"]
-
-
-def test_simulation_prefers_team_needs_roughly():
-    service = DraftGameService()
-    year = service.loader.draft_years()[-1]
-    game = service.create_game(year, "KC", rounds=1, seed=5)
-    state = service.simulate_until_user_pick_or_complete(game)
-    need_hits = 0
-    checked = 0
-    for pick in state["picks"][:20]:
-        team = service.loader.team_by_id(pick["team_id"])
-        if pick["position"] in team["needs"]:
-            need_hits += 1
-        checked += 1
-    assert checked
-    assert need_hits / checked >= 0.25
-
-
-def test_data_loader_handles_missing_fields(tmp_path):
-    data_file = tmp_path / "sample_game_data.json"
-    data_file.write_text(
-        """{
-          "teams": [{"id": "AAA", "name": "A Team", "abbreviation": "AAA", "needs": ["QB"]}],
-          "prospects": [{"hidden_id": "x1", "real_name": "Real Player", "fake_name": "Fake Player", "draft_year": 2000, "rank": 1, "position": "QB", "college_team": "State"}]
-        }""",
-        encoding="utf-8",
-    )
     from app.data_loader import DataLoader
 
-    loader = DataLoader(data_file)
-    assert loader.draft_years() == [2000]
-    assert loader.prospects_for_year(2000)[0]["fake_name"] == "Fake Player"
+    prospects = DataLoader().prospects_for_year(2021)
+    assert prospects[0]["real_name"] == "Real Quarterback II"
+
+
+def test_team_abbreviation_normalization_is_consistent(isolated_app):
+    client, _service, _fake_nfl = isolated_app
+
+    client.post("/api/data/draft-years/2021/build?through_season=2021")
+    teams = client.get("/api/data/teams?draft_year=2021").json()
+    assert any(team["id"] == "LAR" for team in teams)
+    assert all(team["id"] != "STL" for team in teams)
+
+
+def test_old_csv_data_is_not_used_in_normal_mode(tmp_path, monkeypatch):
+    monkeypatch.setenv("DATA_CACHE_DIR", str(tmp_path))
+
+    from app.services.draft_year_data_service import DraftYearDataService
+    from app.data_sources.nflverse_client import MissingNFLReadPy
+
+    class MissingNFL:
+        def draft_picks(self, years=None, force=False):
+            raise MissingNFLReadPy("nflreadpy is not installed")
+
+    service = DraftYearDataService(nflverse=MissingNFL(), cfbd=FakeCFBD())
+    with pytest.raises(MissingNFLReadPy):
+        service.build_draft_year(2021, 2021)
+
+
+def test_pre_reveal_endpoints_do_not_leak_private_fields(isolated_app):
+    client, _service, _fake_nfl = isolated_app
+
+    game = client.post("/api/games", json={"draft_year": 2021, "user_team": "LAR", "rounds": 1, "seed": 1}).json()
+    board = client.get(f"/api/games/{game['game_id']}/draft-board").json()
+    state = client.get(f"/api/games/{game['game_id']}").json()
+
+    assert_no_private_fields(board)
+    assert_no_private_fields(state)
+
+
+def test_results_reveal_only_after_completion(isolated_app):
+    client, _service, _fake_nfl = isolated_app
+
+    game = client.post("/api/games", json={"draft_year": 2021, "user_team": "LAR", "rounds": 1, "seed": 1}).json()
+    early = client.get(f"/api/games/{game['game_id']}/results")
+    assert early.status_code == 400
+
+    board = client.get(f"/api/games/{game['game_id']}/draft-board").json()["prospects"]
+    client.post(f"/api/games/{game['game_id']}/pick", json={"hidden_id": board[0]["hidden_id"]})
+    done = client.post(f"/api/games/{game['game_id']}/simulate-rest").json()
+    assert done["status"] == "complete"
+
+    reveal = client.get(f"/api/games/{game['game_id']}/results").json()
+    assert reveal["user_picks"][0]["real_name"]
+    assert reveal["user_picks"][0]["career_value"] >= 0
+
+
+def test_source_consistency_validation_catches_mixed_sample(isolated_app):
+    client, _service, _fake_nfl = isolated_app
+
+    client.post("/api/data/draft-years/2021/build?through_season=2021")
+    from app.database import session
+
+    with session() as conn:
+        conn.execute("UPDATE prospects SET source = 'sample' WHERE draft_year = 2021 AND rank = 1")
+
+    from app.services.draft_year_data_service import ValidationService
+
+    result = ValidationService().validate_draft_year(2021)
+    assert result["valid"] is False
+    assert "mixed real and sample/fallback sources" in result["errors"]
+
+
+def test_persisted_db_survives_service_restart(isolated_app):
+    client, _service, _fake_nfl = isolated_app
+
+    client.post("/api/data/draft-years/2021/build?through_season=2021")
+
+    from app.data_loader import DataLoader
+    from app.services.game_service import DraftGameService
+
+    restarted = DraftGameService(loader=DataLoader())
+    assert restarted.loader.prospects_for_year(2021)

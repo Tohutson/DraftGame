@@ -1,4 +1,8 @@
 /data/
+/app/data/raw/
+/app/data/processed/
+/app/data/draft_game.db
+/app/data/*.db
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
