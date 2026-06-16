@@ -1,156 +1,124 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { api } from "../api";
 
 function DraftSetup() {
-    const [years, setYears] = useState([])
-    const [teams, setTeams] = useState([])
-
-    const [yearsLoading, setYearsLoading] = useState(false);
-    const [teamsLoading, setTeamsLoading] = useState(false);
-
-    const [yearsError, setYearsError] = useState(null);
-    const [teamsError, setTeamsError] = useState(null);
-
+    const [years, setYears] = useState([]);
+    const [teams, setTeams] = useState([]);
     const [selectedYear, setSelectedYear] = useState("");
     const [selectedTeam, setSelectedTeam] = useState("");
-
+    const [rounds, setRounds] = useState(3);
+    const [seed, setSeed] = useState(2026);
+    const [loading, setLoading] = useState(true);
     const [startLoading, setStartLoading] = useState(false);
-    const [startError, setStartError] = useState(null);
+    const [error, setError] = useState(null);
 
     const navigate = useNavigate();
 
-    const handleStartDraft = () => {
+    const handleStartDraft = async () => {
         setStartLoading(true);
-        setStartError(null);
-
-        fetch("http://localhost:8000/draft/start", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                year: Number(selectedYear),
-                user_team: selectedTeam,
-            }),
-        })
-            .then((res) => {
-                if (!res.ok) throw new Error("Failed to start draft");
-                return res.json();
-            })
-            .then((data) => {
-                const draftId = data.draft_id;
-                navigate(`/draft/${draftId}`);
-            })
-            .catch((err) => setStartError(err.message))
-            .finally(() => setStartLoading(false));
+        setError(null);
+        try {
+            const game = await api.createGame({
+                draft_year: Number(selectedYear),
+                user_team: selectedTeam || null,
+                rounds: Number(rounds),
+                seed: Number(seed) || 2026,
+            });
+            navigate(`/draft/${game.game_id}`);
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setStartLoading(false);
+        }
     };
 
     useEffect(() => {
-        setYearsLoading(true);
-        setYearsError(null);
-
-        fetch("http://localhost:8000/draft/years")
-            .then((res) => {
-                if (!res.ok) throw new Error("Failed to load years");
-                return res.json();
-            })
-            .then((data) => setYears(data))
-            .catch((err) => setYearsError(err.message))
-            .finally(() => setYearsLoading(false));
+        let cancelled = false;
+        async function load() {
+            try {
+                const [yearData, teamData] = await Promise.all([api.getYears(), api.getTeams()]);
+                if (cancelled) return;
+                setYears(yearData);
+                setTeams(teamData);
+                setSelectedYear(String(yearData[yearData.length - 1] || ""));
+                setSelectedTeam(teamData[0]?.id || "");
+            } catch (err) {
+                if (!cancelled) setError(err.message);
+            } finally {
+                if (!cancelled) setLoading(false);
+            }
+        }
+        load();
+        return () => {
+            cancelled = true;
+        };
     }, []);
 
-    useEffect(() => {
-        if (!selectedYear) return;
-
-        setTeamsLoading(true);
-        setTeamsError(null);
-
-        fetch(`http://localhost:8000/draft/teams?year=${selectedYear}`)
-            .then((res) => {
-                if (!res.ok) throw new Error("Failed to load teams");
-                return res.json();
-            })
-            .then((data) => setTeams(data))
-            .catch((err) => setTeamsError(err.message))
-            .finally(() => setTeamsLoading(false));
-    }, [selectedYear]);
-
-    useEffect(() => {
-        setSelectedTeam("");
-    }, [selectedYear]);
-
     return (
-        <div style={{ padding: "2rem" }}>
-            <h1>Draft Setup</h1>
+        <main className="setup-page">
+            <section className="setup-panel">
+                <div>
+                    <p className="eyebrow">NFL Draft Memory Game</p>
+                    <h1>Hidden Name Draft</h1>
+                    <p className="lede">
+                        Draft college prospects using fake names, then reveal the real NFL players
+                        and career outcomes after the final pick.
+                    </p>
+                </div>
 
-            <div>
-                <label>Year:</label>
+                {error && <p className="error">{error}</p>}
+
+                <label>
+                    Draft class
                 <select
                     value={selectedYear}
                     onChange={(e) => setSelectedYear(e.target.value)}
-                    disabled={yearsLoading}
+                        disabled={loading}
                 >
-                    {yearsLoading ? (
-                        <option>Loading years...</option>
-                    ) : (
-                        <>
-                            <option value="">Select a year</option>
-                            {years.map((year) => (
-                                <option key={year} value={year}>
-                                    {year}
-                                </option>
-                            ))}
-                        </>
-                    )}
+                        {years.map((year) => (
+                            <option key={year} value={year}>{year}</option>
+                        ))}
                 </select>
-                {yearsError && (
-                    <p style={{ color: "red", marginTop: "0.5rem" }}>
-                        {yearsError}
-                    </p>
-                )}
-            </div>
+                </label>
 
-            <div>
-                <label>Team:</label>
+                <label>
+                    Your team
                 <select
                     value={selectedTeam}
                     onChange={(e) => setSelectedTeam(e.target.value)}
-                    disabled={!selectedYear || teamsLoading}
+                        disabled={loading}
                 >
-                    {!selectedYear ? (
-                        <option>Select a year first</option>
-                    ) : teamsLoading ? (
-                        <option>Loading teams...</option>
-                    ) : (
-                        <>
-                            <option value="">Select a team</option>
-                            {teams.map((team) => (
-                                <option key={team} value={team}>
-                                    {team}
-                                </option>
-                            ))}
-                        </>
-                    )}
+                        {teams.map((team) => (
+                            <option key={team.id} value={team.id}>{team.name}</option>
+                        ))}
                 </select>
-                {teamsError && (
-                    <p style={{ color: "red", marginTop: "0.5rem" }}>
-                        {teamsError}
-                    </p>
-                )}
-            </div>
+                </label>
+
+                <div className="setup-grid">
+                    <label>
+                        Rounds
+                        <select value={rounds} onChange={(e) => setRounds(e.target.value)}>
+                            <option value={1}>1</option>
+                            <option value={3}>3</option>
+                            <option value={7}>7</option>
+                        </select>
+                    </label>
+                    <label>
+                        Seed
+                        <input value={seed} onChange={(e) => setSeed(e.target.value)} />
+                    </label>
+                </div>
 
             <button
+                    className="primary"
                 onClick={handleStartDraft}
-                disabled={!selectedYear || !selectedTeam || startLoading}
+                    disabled={!selectedYear || !selectedTeam || startLoading || loading}
             >
-                {startLoading ? "Starting..." : "Start Draft"}
+                    {startLoading ? "Starting..." : "Start Game"}
             </button>
-            {startError && (
-                <p style={{ color: "red", marginTop: "0.5rem" }}>
-                    {startError}
-                </p>
-            )}
-        </div>
+            </section>
+        </main>
     );
 }
 

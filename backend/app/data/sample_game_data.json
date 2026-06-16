@@ -1,0 +1,5089 @@
+{
+  "meta": {
+    "dataset": "sample",
+    "description": "Offline sample game data generated from bundled draft CSVs with deterministic fake names."
+  },
+  "teams": [
+    {
+      "id": "ARI",
+      "name": "Arizona Cardinals",
+      "abbreviation": "ARI",
+      "needs": [
+        "WR",
+        "EDGE",
+        "CB"
+      ]
+    },
+    {
+      "id": "ATL",
+      "name": "Atlanta Falcons",
+      "abbreviation": "ATL",
+      "needs": [
+        "EDGE",
+        "QB",
+        "CB"
+      ]
+    },
+    {
+      "id": "BAL",
+      "name": "Baltimore Ravens",
+      "abbreviation": "BAL",
+      "needs": [
+        "OT",
+        "WR",
+        "EDGE"
+      ]
+    },
+    {
+      "id": "BUF",
+      "name": "Buffalo Bills",
+      "abbreviation": "BUF",
+      "needs": [
+        "WR",
+        "S",
+        "DT"
+      ]
+    },
+    {
+      "id": "CAR",
+      "name": "Carolina Panthers",
+      "abbreviation": "CAR",
+      "needs": [
+        "WR",
+        "EDGE",
+        "IOL"
+      ]
+    },
+    {
+      "id": "CHI",
+      "name": "Chicago Bears",
+      "abbreviation": "CHI",
+      "needs": [
+        "QB",
+        "EDGE",
+        "WR"
+      ]
+    },
+    {
+      "id": "CIN",
+      "name": "Cincinnati Bengals",
+      "abbreviation": "CIN",
+      "needs": [
+        "OT",
+        "DT",
+        "CB"
+      ]
+    },
+    {
+      "id": "CLE",
+      "name": "Cleveland Browns",
+      "abbreviation": "CLE",
+      "needs": [
+        "WR",
+        "DT",
+        "LB"
+      ]
+    },
+    {
+      "id": "DAL",
+      "name": "Dallas Cowboys",
+      "abbreviation": "DAL",
+      "needs": [
+        "OT",
+        "RB",
+        "LB"
+      ]
+    },
+    {
+      "id": "DEN",
+      "name": "Denver Broncos",
+      "abbreviation": "DEN",
+      "needs": [
+        "QB",
+        "CB",
+        "TE"
+      ]
+    },
+    {
+      "id": "DET",
+      "name": "Detroit Lions",
+      "abbreviation": "DET",
+      "needs": [
+        "CB",
+        "EDGE",
+        "WR"
+      ]
+    },
+    {
+      "id": "GB",
+      "name": "Green Bay Packers",
+      "abbreviation": "GB",
+      "needs": [
+        "CB",
+        "OT",
+        "RB"
+      ]
+    },
+    {
+      "id": "HOU",
+      "name": "Houston Texans",
+      "abbreviation": "HOU",
+      "needs": [
+        "DT",
+        "CB",
+        "WR"
+      ]
+    },
+    {
+      "id": "IND",
+      "name": "Indianapolis Colts",
+      "abbreviation": "IND",
+      "needs": [
+        "CB",
+        "WR",
+        "TE"
+      ]
+    },
+    {
+      "id": "JAX",
+      "name": "Jacksonville Jaguars",
+      "abbreviation": "JAX",
+      "needs": [
+        "CB",
+        "WR",
+        "DT"
+      ]
+    },
+    {
+      "id": "KC",
+      "name": "Kansas City Chiefs",
+      "abbreviation": "KC",
+      "needs": [
+        "WR",
+        "OT",
+        "CB"
+      ]
+    },
+    {
+      "id": "LV",
+      "name": "Las Vegas Raiders",
+      "abbreviation": "LV",
+      "needs": [
+        "QB",
+        "CB",
+        "OT"
+      ]
+    },
+    {
+      "id": "LAC",
+      "name": "Los Angeles Chargers",
+      "abbreviation": "LAC",
+      "needs": [
+        "WR",
+        "OT",
+        "CB"
+      ]
+    },
+    {
+      "id": "LAR",
+      "name": "Los Angeles Rams",
+      "abbreviation": "LAR",
+      "needs": [
+        "EDGE",
+        "OT",
+        "CB"
+      ]
+    },
+    {
+      "id": "MIA",
+      "name": "Miami Dolphins",
+      "abbreviation": "MIA",
+      "needs": [
+        "IOL",
+        "DT",
+        "TE"
+      ]
+    },
+    {
+      "id": "MIN",
+      "name": "Minnesota Vikings",
+      "abbreviation": "MIN",
+      "needs": [
+        "QB",
+        "EDGE",
+        "IOL"
+      ]
+    },
+    {
+      "id": "NE",
+      "name": "New England Patriots",
+      "abbreviation": "NE",
+      "needs": [
+        "QB",
+        "WR",
+        "OT"
+      ]
+    },
+    {
+      "id": "NO",
+      "name": "New Orleans Saints",
+      "abbreviation": "NO",
+      "needs": [
+        "OT",
+        "DT",
+        "WR"
+      ]
+    },
+    {
+      "id": "NYG",
+      "name": "New York Giants",
+      "abbreviation": "NYG",
+      "needs": [
+        "WR",
+        "QB",
+        "CB"
+      ]
+    },
+    {
+      "id": "NYJ",
+      "name": "New York Jets",
+      "abbreviation": "NYJ",
+      "needs": [
+        "OT",
+        "WR",
+        "S"
+      ]
+    },
+    {
+      "id": "PHI",
+      "name": "Philadelphia Eagles",
+      "abbreviation": "PHI",
+      "needs": [
+        "CB",
+        "LB",
+        "S"
+      ]
+    },
+    {
+      "id": "PIT",
+      "name": "Pittsburgh Steelers",
+      "abbreviation": "PIT",
+      "needs": [
+        "OT",
+        "CB",
+        "WR"
+      ]
+    },
+    {
+      "id": "SEA",
+      "name": "Seattle Seahawks",
+      "abbreviation": "SEA",
+      "needs": [
+        "IOL",
+        "EDGE",
+        "S"
+      ]
+    },
+    {
+      "id": "SF",
+      "name": "San Francisco 49ers",
+      "abbreviation": "SF",
+      "needs": [
+        "OT",
+        "CB",
+        "IOL"
+      ]
+    },
+    {
+      "id": "TB",
+      "name": "Tampa Bay Buccaneers",
+      "abbreviation": "TB",
+      "needs": [
+        "EDGE",
+        "IOL",
+        "CB"
+      ]
+    },
+    {
+      "id": "TEN",
+      "name": "Tennessee Titans",
+      "abbreviation": "TEN",
+      "needs": [
+        "OT",
+        "WR",
+        "EDGE"
+      ]
+    },
+    {
+      "id": "WAS",
+      "name": "Washington Commanders",
+      "abbreviation": "WAS",
+      "needs": [
+        "QB",
+        "OT",
+        "CB"
+      ]
+    }
+  ],
+  "prospects": [
+    {
+      "hidden_id": "p001",
+      "real_player_id": "104734",
+      "real_name": "Trevor Lawrence",
+      "fake_name": "Evan Bennett",
+      "draft_year": 2021,
+      "rank": 1,
+      "position": "QB",
+      "college_team": "Clemson",
+      "conference": null,
+      "height": 78,
+      "weight": 213,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Passing Yards": 10098,
+        "Passing Touchdowns": 156,
+        "Interceptions": 17,
+        "Rushing Yards": 943
+      },
+      "projected_round": 1,
+      "projected_pick": 1,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 1,
+        "overall": 1,
+        "team": "JAX"
+      },
+      "career_summary": {
+        "games": 182,
+        "starts": 91,
+        "passing_yards": 42504,
+        "td": 222,
+        "int": 111
+      },
+      "career_value": 101.2,
+      "outcome_label": "Star",
+      "reveal_blurb": "Trevor Lawrence was selected 1 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p002",
+      "real_player_id": "104933",
+      "real_name": "Zach Wilson",
+      "fake_name": "Jordan Coleman",
+      "draft_year": 2021,
+      "rank": 2,
+      "position": "QB",
+      "college_team": "BYU",
+      "conference": null,
+      "height": 74,
+      "weight": 214,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Passing Yards": 7652,
+        "Passing Touchdowns": 79,
+        "Interceptions": 15,
+        "Rushing Yards": 642
+      },
+      "projected_round": 1,
+      "projected_pick": 2,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 2,
+        "overall": 2,
+        "team": "NYJ"
+      },
+      "career_summary": {
+        "games": 187,
+        "starts": 93,
+        "passing_yards": 43848,
+        "td": 229,
+        "int": 114
+      },
+      "career_value": 104.4,
+      "outcome_label": "Star",
+      "reveal_blurb": "Zach Wilson was selected 2 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p003",
+      "real_player_id": "104742",
+      "real_name": "Trey Lance",
+      "fake_name": "Marcus Coleman",
+      "draft_year": 2021,
+      "rank": 3,
+      "position": "QB",
+      "college_team": "North Dakota State",
+      "conference": null,
+      "height": 76,
+      "weight": 224,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Passing Yards": 2947,
+        "Passing Touchdowns": 58,
+        "Interceptions": 1,
+        "Rushing Yards": 1325
+      },
+      "projected_round": 1,
+      "projected_pick": 3,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 3,
+        "overall": 3,
+        "team": "SF"
+      },
+      "career_summary": {
+        "games": 193,
+        "starts": 96,
+        "passing_yards": 45192,
+        "td": 236,
+        "int": 118
+      },
+      "career_value": 107.6,
+      "outcome_label": "Star",
+      "reveal_blurb": "Trey Lance was selected 3 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p004",
+      "real_player_id": "104760",
+      "real_name": "Kyle Pitts",
+      "fake_name": "Trey Marshall",
+      "draft_year": 2021,
+      "rank": 4,
+      "position": "TE",
+      "college_team": "Florida",
+      "conference": null,
+      "height": 78,
+      "weight": 245,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 100,
+        "Receiving Yards": 1492,
+        "Receiving Touchdowns": 24
+      },
+      "projected_round": 1,
+      "projected_pick": 4,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 4,
+        "overall": 4,
+        "team": "ATL"
+      },
+      "career_summary": {
+        "games": 176,
+        "receptions": 469,
+        "receiving_yards": 6063,
+        "receiving_td": 48
+      },
+      "career_value": 97.8,
+      "outcome_label": "Star",
+      "reveal_blurb": "Kyle Pitts was selected 4 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p005",
+      "real_player_id": "104737",
+      "real_name": "Ja'Marr Chase",
+      "fake_name": "Grant Carter",
+      "draft_year": 2021,
+      "rank": 5,
+      "position": "WR",
+      "college_team": "LSU",
+      "conference": null,
+      "height": 72,
+      "weight": 201,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 107,
+        "Receiving Yards": 2093,
+        "Receiving Touchdowns": 46
+      },
+      "projected_round": 1,
+      "projected_pick": 5,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 5,
+        "overall": 5,
+        "team": "CIN"
+      },
+      "career_summary": {
+        "games": 181,
+        "receptions": 484,
+        "receiving_yards": 6262,
+        "receiving_td": 50
+      },
+      "career_value": 101.0,
+      "outcome_label": "Star",
+      "reveal_blurb": "Ja'Marr Chase was selected 5 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p006",
+      "real_player_id": "104744",
+      "real_name": "Jaylen Waddle",
+      "fake_name": "Caleb Hale",
+      "draft_year": 2021,
+      "rank": 6,
+      "position": "WR",
+      "college_team": "Alabama",
+      "conference": null,
+      "height": 70,
+      "weight": 180,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 106,
+        "Receiving Yards": 1999,
+        "Receiving Touchdowns": 30
+      },
+      "projected_round": 1,
+      "projected_pick": 6,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 6,
+        "overall": 6,
+        "team": "MIA"
+      },
+      "career_summary": {
+        "games": 187,
+        "receptions": 500,
+        "receiving_yards": 6460,
+        "receiving_td": 52
+      },
+      "career_value": 104.2,
+      "outcome_label": "Star",
+      "reveal_blurb": "Jaylen Waddle was selected 6 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p007",
+      "real_player_id": "104735",
+      "real_name": "Penei Sewell",
+      "fake_name": "Quinn Carter",
+      "draft_year": 2021,
+      "rank": 7,
+      "position": "OT",
+      "college_team": "Oregon",
+      "conference": null,
+      "height": 77,
+      "weight": 331,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 1,
+      "projected_pick": 7,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 7,
+        "overall": 7,
+        "team": "DET"
+      },
+      "career_summary": {
+        "games": 169,
+        "starts": 113,
+        "approximate_value": 94
+      },
+      "career_value": 94.4,
+      "outcome_label": "Star",
+      "reveal_blurb": "Penei Sewell was selected 7 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p008",
+      "real_player_id": "104938",
+      "real_name": "Jaycee Horn",
+      "fake_name": "Grant Porter",
+      "draft_year": 2021,
+      "rank": 8,
+      "position": "CB",
+      "college_team": "South Carolina",
+      "conference": null,
+      "height": 73,
+      "weight": 205,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 101,
+        "Interceptions": 2,
+        "Passes Defended": 23
+      },
+      "projected_round": 1,
+      "projected_pick": 8,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 8,
+        "overall": 8,
+        "team": "CAR"
+      },
+      "career_summary": {
+        "games": 175,
+        "starts": 107,
+        "tackles": 536,
+        "sacks": 14,
+        "interceptions": 11
+      },
+      "career_value": 97.6,
+      "outcome_label": "Star",
+      "reveal_blurb": "Jaycee Horn was selected 8 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p009",
+      "real_player_id": "104736",
+      "real_name": "Pat Surtain II",
+      "fake_name": "Dante Griffin",
+      "draft_year": 2021,
+      "rank": 9,
+      "position": "CB",
+      "college_team": "Alabama",
+      "conference": null,
+      "height": 74,
+      "weight": 208,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 111,
+        "Interceptions": 4,
+        "Passes Defended": 25
+      },
+      "projected_round": 1,
+      "projected_pick": 9,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 9,
+        "overall": 9,
+        "team": "DEN"
+      },
+      "career_summary": {
+        "games": 181,
+        "starts": 110,
+        "tackles": 554,
+        "sacks": 15,
+        "interceptions": 12
+      },
+      "career_value": 100.8,
+      "outcome_label": "Star",
+      "reveal_blurb": "Pat Surtain II was selected 9 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p010",
+      "real_player_id": "104741",
+      "real_name": "DeVonta Smith",
+      "fake_name": "Darius Carter",
+      "draft_year": 2021,
+      "rank": 10,
+      "position": "WR",
+      "college_team": "Alabama",
+      "conference": null,
+      "height": 72,
+      "weight": 170,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 235,
+        "Receiving Yards": 3965,
+        "Receiving Touchdowns": 69
+      },
+      "projected_round": 1,
+      "projected_pick": 10,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 10,
+        "overall": 10,
+        "team": "PHI"
+      },
+      "career_summary": {
+        "games": 163,
+        "receptions": 436,
+        "receiving_yards": 5642,
+        "receiving_td": 45
+      },
+      "career_value": 91.0,
+      "outcome_label": "Star",
+      "reveal_blurb": "DeVonta Smith was selected 10 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p011",
+      "real_player_id": "104739",
+      "real_name": "Justin Fields",
+      "fake_name": "Marcus Sutton",
+      "draft_year": 2021,
+      "rank": 11,
+      "position": "QB",
+      "college_team": "Ohio State",
+      "conference": null,
+      "height": 75,
+      "weight": 227,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Passing Yards": 5701,
+        "Passing Touchdowns": 112,
+        "Interceptions": 9,
+        "Rushing Yards": 1133
+      },
+      "projected_round": 1,
+      "projected_pick": 11,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 11,
+        "overall": 11,
+        "team": "CHI"
+      },
+      "career_summary": {
+        "games": 169,
+        "starts": 84,
+        "passing_yards": 39564,
+        "td": 207,
+        "int": 103
+      },
+      "career_value": 94.2,
+      "outcome_label": "Star",
+      "reveal_blurb": "Justin Fields was selected 11 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p012",
+      "real_player_id": "104738",
+      "real_name": "Micah Parsons",
+      "fake_name": "Evan Carter",
+      "draft_year": 2021,
+      "rank": 12,
+      "position": "LB",
+      "college_team": "Penn State",
+      "conference": null,
+      "height": 75,
+      "weight": 246,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 191,
+        "Sacks": 6,
+        "Interceptions": 0
+      },
+      "projected_round": 1,
+      "projected_pick": 12,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 12,
+        "overall": 12,
+        "team": "DAL"
+      },
+      "career_summary": {
+        "games": 175,
+        "starts": 107,
+        "tackles": 535,
+        "sacks": 14,
+        "interceptions": 11
+      },
+      "career_value": 97.4,
+      "outcome_label": "Star",
+      "reveal_blurb": "Micah Parsons was selected 12 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p013",
+      "real_player_id": "104761",
+      "real_name": "Rashawn Slater",
+      "fake_name": "Nolan Griffin",
+      "draft_year": 2021,
+      "rank": 13,
+      "position": "OT",
+      "college_team": "Northwestern",
+      "conference": null,
+      "height": 76,
+      "weight": 304,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 1,
+      "projected_pick": 13,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 13,
+        "overall": 13,
+        "team": "LAC"
+      },
+      "career_summary": {
+        "games": 157,
+        "starts": 105,
+        "approximate_value": 87
+      },
+      "career_value": 87.6,
+      "outcome_label": "Star",
+      "reveal_blurb": "Rashawn Slater was selected 13 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p014",
+      "real_player_id": "104771",
+      "real_name": "Alijah Vera-Tucker",
+      "fake_name": "Caleb Bishop",
+      "draft_year": 2021,
+      "rank": 14,
+      "position": "IOL",
+      "college_team": "USC",
+      "conference": null,
+      "height": 77,
+      "weight": 308,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 1,
+      "projected_pick": 14,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 14,
+        "overall": 14,
+        "team": "NYJ"
+      },
+      "career_summary": {
+        "games": 163,
+        "starts": 108,
+        "approximate_value": 90
+      },
+      "career_value": 90.8,
+      "outcome_label": "Star",
+      "reveal_blurb": "Alijah Vera-Tucker was selected 14 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p015",
+      "real_player_id": "104935",
+      "real_name": "Mac Jones",
+      "fake_name": "Marcus Sutton",
+      "draft_year": 2021,
+      "rank": 15,
+      "position": "QB",
+      "college_team": "Alabama",
+      "conference": null,
+      "height": 75,
+      "weight": 217,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Passing Yards": 6126,
+        "Passing Touchdowns": 71,
+        "Interceptions": 7,
+        "Rushing Yards": 42
+      },
+      "projected_round": 1,
+      "projected_pick": 15,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 15,
+        "overall": 15,
+        "team": "NE"
+      },
+      "career_summary": {
+        "games": 169,
+        "starts": 84,
+        "passing_yards": 39480,
+        "td": 206,
+        "int": 103
+      },
+      "career_value": 94.0,
+      "outcome_label": "Star",
+      "reveal_blurb": "Mac Jones was selected 15 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p016",
+      "real_player_id": "105138",
+      "real_name": "Zaven Collins",
+      "fake_name": "Malik Warren",
+      "draft_year": 2021,
+      "rank": 16,
+      "position": "EDGE",
+      "college_team": "Tulsa",
+      "conference": null,
+      "height": 77,
+      "weight": 259,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 236,
+        "Sacks": 7
+      },
+      "projected_round": 1,
+      "projected_pick": 16,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 16,
+        "overall": 16,
+        "team": "ARI"
+      },
+      "career_summary": {
+        "games": 174,
+        "starts": 97,
+        "tackles": 330,
+        "sacks": 43
+      },
+      "career_value": 97.2,
+      "outcome_label": "Star",
+      "reveal_blurb": "Zaven Collins was selected 16 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p017",
+      "real_player_id": "104806",
+      "real_name": "Alex Leatherwood",
+      "fake_name": "Marcus Griffin",
+      "draft_year": 2021,
+      "rank": 17,
+      "position": "OT",
+      "college_team": "Alabama",
+      "conference": null,
+      "height": 77,
+      "weight": 312,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 1,
+      "projected_pick": 17,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 17,
+        "overall": 17,
+        "team": "LV"
+      },
+      "career_summary": {
+        "games": 157,
+        "starts": 104,
+        "approximate_value": 87
+      },
+      "career_value": 87.4,
+      "outcome_label": "Star",
+      "reveal_blurb": "Alex Leatherwood was selected 17 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p018",
+      "real_player_id": "105141",
+      "real_name": "Jaelan Phillips",
+      "fake_name": "Nolan Warren",
+      "draft_year": 2021,
+      "rank": 18,
+      "position": "EDGE",
+      "college_team": "Miami",
+      "conference": null,
+      "height": 78,
+      "weight": 260,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 86,
+        "Sacks": 12
+      },
+      "projected_round": 1,
+      "projected_pick": 18,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 18,
+        "overall": 18,
+        "team": "MIA"
+      },
+      "career_summary": {
+        "games": 163,
+        "starts": 90,
+        "tackles": 308,
+        "sacks": 40
+      },
+      "career_value": 90.6,
+      "outcome_label": "Star",
+      "reveal_blurb": "Jaelan Phillips was selected 18 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p019",
+      "real_player_id": "105250",
+      "real_name": "Jamin Davis",
+      "fake_name": "Caleb Porter",
+      "draft_year": 2021,
+      "rank": 19,
+      "position": "LB",
+      "college_team": "Kentucky",
+      "conference": null,
+      "height": 76,
+      "weight": 234,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 131,
+        "Sacks": 2,
+        "Interceptions": 4
+      },
+      "projected_round": 1,
+      "projected_pick": 19,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 19,
+        "overall": 19,
+        "team": "WSH"
+      },
+      "career_summary": {
+        "games": 168,
+        "starts": 103,
+        "tackles": 515,
+        "sacks": 14,
+        "interceptions": 11
+      },
+      "career_value": 93.8,
+      "outcome_label": "Star",
+      "reveal_blurb": "Jamin Davis was selected 19 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p020",
+      "real_player_id": "105142",
+      "real_name": "Kadarius Toney",
+      "fake_name": "Bryce Marshall",
+      "draft_year": 2021,
+      "rank": 20,
+      "position": "WR",
+      "college_team": "Florida",
+      "conference": null,
+      "height": 72,
+      "weight": 193,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 120,
+        "Receiving Yards": 1590,
+        "Receiving Touchdowns": 14
+      },
+      "projected_round": 1,
+      "projected_pick": 20,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 20,
+        "overall": 20,
+        "team": "NYG"
+      },
+      "career_summary": {
+        "games": 151,
+        "receptions": 403,
+        "receiving_yards": 5208,
+        "receiving_td": 42
+      },
+      "career_value": 84.0,
+      "outcome_label": "Star",
+      "reveal_blurb": "Kadarius Toney was selected 20 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p021",
+      "real_player_id": "104780",
+      "real_name": "Kwity Paye",
+      "fake_name": "Quinn Brooks",
+      "draft_year": 2021,
+      "rank": 21,
+      "position": "EDGE",
+      "college_team": "Michigan",
+      "conference": null,
+      "height": 75,
+      "weight": 261,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 99,
+        "Sacks": 11
+      },
+      "projected_round": 1,
+      "projected_pick": 21,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 21,
+        "overall": 21,
+        "team": "IND"
+      },
+      "career_summary": {
+        "games": 156,
+        "starts": 87,
+        "tackles": 296,
+        "sacks": 39
+      },
+      "career_value": 87.2,
+      "outcome_label": "Star",
+      "reveal_blurb": "Kwity Paye was selected 21 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p022",
+      "real_player_id": "104751",
+      "real_name": "Caleb Farley",
+      "fake_name": "Isaiah Brooks",
+      "draft_year": 2021,
+      "rank": 22,
+      "position": "CB",
+      "college_team": "Virginia Tech",
+      "conference": null,
+      "height": 74,
+      "weight": 197,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 56,
+        "Interceptions": 6,
+        "Passes Defended": 19
+      },
+      "projected_round": 1,
+      "projected_pick": 22,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 22,
+        "overall": 22,
+        "team": "TEN"
+      },
+      "career_summary": {
+        "games": 162,
+        "starts": 99,
+        "tackles": 497,
+        "sacks": 13,
+        "interceptions": 10
+      },
+      "career_value": 90.4,
+      "outcome_label": "Star",
+      "reveal_blurb": "Caleb Farley was selected 22 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p023",
+      "real_player_id": "105134",
+      "real_name": "Christian Darrisaw",
+      "fake_name": "Trey Reed",
+      "draft_year": 2021,
+      "rank": 23,
+      "position": "OT",
+      "college_team": "Virginia Tech",
+      "conference": null,
+      "height": 77,
+      "weight": 322,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 1,
+      "projected_pick": 23,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 23,
+        "overall": 23,
+        "team": "MIN"
+      },
+      "career_summary": {
+        "games": 145,
+        "starts": 96,
+        "approximate_value": 80
+      },
+      "career_value": 80.6,
+      "outcome_label": "Star",
+      "reveal_blurb": "Christian Darrisaw was selected 23 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p024",
+      "real_player_id": "104766",
+      "real_name": "Najee Harris",
+      "fake_name": "Dante Carter",
+      "draft_year": 2021,
+      "rank": 24,
+      "position": "RB",
+      "college_team": "Alabama",
+      "conference": null,
+      "height": 73,
+      "weight": 232,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Rushing Yards": 3843,
+        "Rushing Touchdowns": 66,
+        "Receiving Yards": 781,
+        "Receptions": 80
+      },
+      "projected_round": 1,
+      "projected_pick": 24,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 24,
+        "overall": 24,
+        "team": "PIT"
+      },
+      "career_summary": {
+        "games": 150,
+        "rushing_yards": 6033,
+        "receiving_yards": 2346,
+        "total_td": 67
+      },
+      "career_value": 83.8,
+      "outcome_label": "Star",
+      "reveal_blurb": "Najee Harris was selected 24 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p025",
+      "real_player_id": "104752",
+      "real_name": "Travis Etienne",
+      "fake_name": "Quinn Pierce",
+      "draft_year": 2021,
+      "rank": 25,
+      "position": "RB",
+      "college_team": "Clemson",
+      "conference": null,
+      "height": 70,
+      "weight": 215,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Rushing Yards": 4952,
+        "Rushing Touchdowns": 126,
+        "Receiving Yards": 1155,
+        "Receptions": 102
+      },
+      "projected_round": 1,
+      "projected_pick": 25,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 25,
+        "overall": 25,
+        "team": "JAX"
+      },
+      "career_summary": {
+        "games": 156,
+        "rushing_yards": 6264,
+        "receiving_yards": 2436,
+        "total_td": 69
+      },
+      "career_value": 87.0,
+      "outcome_label": "Star",
+      "reveal_blurb": "Travis Etienne was selected 25 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p026",
+      "real_player_id": "105268",
+      "real_name": "Greg Newsome II",
+      "fake_name": "Jalen Reed",
+      "draft_year": 2021,
+      "rank": 26,
+      "position": "CB",
+      "college_team": "Northwestern",
+      "conference": null,
+      "height": 72,
+      "weight": 192,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 71,
+        "Interceptions": 1,
+        "Passes Defended": 24
+      },
+      "projected_round": 1,
+      "projected_pick": 26,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 26,
+        "overall": 26,
+        "team": "CLE"
+      },
+      "career_summary": {
+        "games": 138,
+        "starts": 84,
+        "tackles": 424,
+        "sacks": 11,
+        "interceptions": 9
+      },
+      "career_value": 77.2,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Greg Newsome II was selected 26 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p027",
+      "real_player_id": "104740",
+      "real_name": "Rashod Bateman",
+      "fake_name": "Malik Griffin",
+      "draft_year": 2021,
+      "rank": 27,
+      "position": "WR",
+      "college_team": "Minnesota",
+      "conference": null,
+      "height": 72,
+      "weight": 190,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 147,
+        "Receiving Yards": 2395,
+        "Receiving Touchdowns": 36
+      },
+      "projected_round": 1,
+      "projected_pick": 27,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 27,
+        "overall": 27,
+        "team": "BAL"
+      },
+      "career_summary": {
+        "games": 144,
+        "receptions": 385,
+        "receiving_yards": 4984,
+        "receiving_td": 40
+      },
+      "career_value": 80.4,
+      "outcome_label": "Star",
+      "reveal_blurb": "Rashod Bateman was selected 27 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p028",
+      "real_player_id": "105148",
+      "real_name": "Payton Turner",
+      "fake_name": "Cole Carter",
+      "draft_year": 2021,
+      "rank": 28,
+      "position": "EDGE",
+      "college_team": "Houston",
+      "conference": null,
+      "height": 78,
+      "weight": 268,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 115,
+        "Sacks": 10
+      },
+      "projected_round": 1,
+      "projected_pick": 28,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 28,
+        "overall": 28,
+        "team": "NO"
+      },
+      "career_summary": {
+        "games": 150,
+        "starts": 83,
+        "tackles": 284,
+        "sacks": 37
+      },
+      "career_value": 83.6,
+      "outcome_label": "Star",
+      "reveal_blurb": "Payton Turner was selected 28 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p029",
+      "real_player_id": "105145",
+      "real_name": "Eric Stokes",
+      "fake_name": "Nolan Bennett",
+      "draft_year": 2021,
+      "rank": 29,
+      "position": "CB",
+      "college_team": "Georgia",
+      "conference": null,
+      "height": 73,
+      "weight": 194,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 78,
+        "Interceptions": 4,
+        "Passes Defended": 22
+      },
+      "projected_round": 1,
+      "projected_pick": 29,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 29,
+        "overall": 29,
+        "team": "GB"
+      },
+      "career_summary": {
+        "games": 156,
+        "starts": 95,
+        "tackles": 477,
+        "sacks": 13,
+        "interceptions": 10
+      },
+      "career_value": 86.8,
+      "outcome_label": "Star",
+      "reveal_blurb": "Eric Stokes was selected 29 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p030",
+      "real_player_id": "104745",
+      "real_name": "Gregory Rousseau",
+      "fake_name": "Quinn Bennett",
+      "draft_year": 2021,
+      "rank": 30,
+      "position": "EDGE",
+      "college_team": "Miami",
+      "conference": null,
+      "height": 79,
+      "weight": 266,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 59,
+        "Sacks": 15
+      },
+      "projected_round": 1,
+      "projected_pick": 30,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 30,
+        "overall": 30,
+        "team": "BUF"
+      },
+      "career_summary": {
+        "games": 138,
+        "starts": 77,
+        "tackles": 261,
+        "sacks": 34
+      },
+      "career_value": 77.0,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Gregory Rousseau was selected 30 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p031",
+      "real_player_id": "105249",
+      "real_name": "Odafe Oweh",
+      "fake_name": "Isaiah Griffin",
+      "draft_year": 2021,
+      "rank": 31,
+      "position": "EDGE",
+      "college_team": "Penn State",
+      "conference": null,
+      "height": 77,
+      "weight": 257,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 63,
+        "Sacks": 7
+      },
+      "projected_round": 1,
+      "projected_pick": 31,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 31,
+        "overall": 31,
+        "team": "BAL"
+      },
+      "career_summary": {
+        "games": 144,
+        "starts": 80,
+        "tackles": 272,
+        "sacks": 36
+      },
+      "career_value": 80.2,
+      "outcome_label": "Star",
+      "reveal_blurb": "Odafe Oweh was selected 31 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p032",
+      "real_player_id": "104773",
+      "real_name": "Joe Tryon",
+      "fake_name": "Darius Carter",
+      "draft_year": 2021,
+      "rank": 32,
+      "position": "EDGE",
+      "college_team": "Washington",
+      "conference": null,
+      "height": 77,
+      "weight": 259,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 61,
+        "Sacks": 9
+      },
+      "projected_round": 1,
+      "projected_pick": 32,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 1,
+        "pick": 32,
+        "overall": 32,
+        "team": "TB"
+      },
+      "career_summary": {
+        "games": 150,
+        "starts": 83,
+        "tackles": 283,
+        "sacks": 37
+      },
+      "career_value": 83.4,
+      "outcome_label": "Star",
+      "reveal_blurb": "Joe Tryon was selected 32 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p033",
+      "real_player_id": "104842",
+      "real_name": "Tyson Campbell",
+      "fake_name": "Quinn Warren",
+      "draft_year": 2021,
+      "rank": 33,
+      "position": "CB",
+      "college_team": "Georgia",
+      "conference": null,
+      "height": 73,
+      "weight": 193,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 86,
+        "Interceptions": 1,
+        "Passes Defended": 9
+      },
+      "projected_round": 2,
+      "projected_pick": 33,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 1,
+        "overall": 33,
+        "team": "JAX"
+      },
+      "career_summary": {
+        "games": 132,
+        "starts": 80,
+        "tackles": 404,
+        "sacks": 11,
+        "interceptions": 8
+      },
+      "career_value": 73.6,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Tyson Campbell was selected 33 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p034",
+      "real_player_id": "105139",
+      "real_name": "Elijah Moore",
+      "fake_name": "Evan Carter",
+      "draft_year": 2021,
+      "rank": 34,
+      "position": "WR",
+      "college_team": "Ole Miss",
+      "conference": null,
+      "height": 70,
+      "weight": 178,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 189,
+        "Receiving Yards": 2441,
+        "Receiving Touchdowns": 24
+      },
+      "projected_round": 2,
+      "projected_pick": 34,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 2,
+        "overall": 34,
+        "team": "NYJ"
+      },
+      "career_summary": {
+        "games": 138,
+        "receptions": 368,
+        "receiving_yards": 4761,
+        "receiving_td": 38
+      },
+      "career_value": 76.8,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Elijah Moore was selected 34 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p035",
+      "real_player_id": "105146",
+      "real_name": "Javonte Williams",
+      "fake_name": "Nolan Hayes",
+      "draft_year": 2021,
+      "rank": 35,
+      "position": "RB",
+      "college_team": "North Carolina",
+      "conference": null,
+      "height": 70,
+      "weight": 212,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Rushing Yards": 2297,
+        "Rushing Touchdowns": 39,
+        "Receiving Yards": 539,
+        "Receptions": 50
+      },
+      "projected_round": 2,
+      "projected_pick": 35,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 3,
+        "overall": 35,
+        "team": "DEN"
+      },
+      "career_summary": {
+        "games": 144,
+        "rushing_yards": 5760,
+        "receiving_yards": 2240,
+        "total_td": 64
+      },
+      "career_value": 80.0,
+      "outcome_label": "Star",
+      "reveal_blurb": "Javonte Williams was selected 35 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p036",
+      "real_player_id": "104753",
+      "real_name": "Jevon Holland",
+      "fake_name": "Jordan Hayes",
+      "draft_year": 2021,
+      "rank": 36,
+      "position": "S",
+      "college_team": "Oregon",
+      "conference": null,
+      "height": 73,
+      "weight": 207,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 108,
+        "Interceptions": 9,
+        "Passes Defended": 10
+      },
+      "projected_round": 2,
+      "projected_pick": 36,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 4,
+        "overall": 36,
+        "team": "MIA"
+      },
+      "career_summary": {
+        "games": 126,
+        "starts": 77,
+        "tackles": 386,
+        "sacks": 10,
+        "interceptions": 8
+      },
+      "career_value": 70.2,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Jevon Holland was selected 36 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p037",
+      "real_player_id": "104813",
+      "real_name": "Landon Dickerson",
+      "fake_name": "Quinn Coleman",
+      "draft_year": 2021,
+      "rank": 37,
+      "position": "IOL",
+      "college_team": "Alabama",
+      "conference": null,
+      "height": 78,
+      "weight": 333,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 2,
+      "projected_pick": 37,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 5,
+        "overall": 37,
+        "team": "PHI"
+      },
+      "career_summary": {
+        "games": 132,
+        "starts": 88,
+        "approximate_value": 73
+      },
+      "career_value": 73.4,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Landon Dickerson was selected 37 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p038",
+      "real_player_id": "104936",
+      "real_name": "Christian Barmore",
+      "fake_name": "Bryce Bishop",
+      "draft_year": 2021,
+      "rank": 38,
+      "position": "DT",
+      "college_team": "Alabama",
+      "conference": null,
+      "height": 76,
+      "weight": 310,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 53,
+        "Sacks": 8
+      },
+      "projected_round": 2,
+      "projected_pick": 38,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 6,
+        "overall": 38,
+        "team": "NE"
+      },
+      "career_summary": {
+        "games": 137,
+        "starts": 76,
+        "tackles": 260,
+        "sacks": 34
+      },
+      "career_value": 76.6,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Christian Barmore was selected 38 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p039",
+      "real_player_id": "104775",
+      "real_name": "Teven Jenkins",
+      "fake_name": "Jordan Coleman",
+      "draft_year": 2021,
+      "rank": 39,
+      "position": "OT",
+      "college_team": "Oklahoma State",
+      "conference": null,
+      "height": 78,
+      "weight": 317,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 2,
+      "projected_pick": 39,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 7,
+        "overall": 39,
+        "team": "CHI"
+      },
+      "career_summary": {
+        "games": 120,
+        "starts": 80,
+        "approximate_value": 66
+      },
+      "career_value": 66.8,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Teven Jenkins was selected 39 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p040",
+      "real_player_id": "105187",
+      "real_name": "Richie Grant",
+      "fake_name": "Bryce Bennett",
+      "draft_year": 2021,
+      "rank": 40,
+      "position": "S",
+      "college_team": "UCF",
+      "conference": null,
+      "height": 72,
+      "weight": 197,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 290,
+        "Interceptions": 10,
+        "Passes Defended": 18
+      },
+      "projected_round": 2,
+      "projected_pick": 40,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 8,
+        "overall": 40,
+        "team": "ATL"
+      },
+      "career_summary": {
+        "games": 126,
+        "starts": 77,
+        "tackles": 385,
+        "sacks": 10,
+        "interceptions": 8
+      },
+      "career_value": 70.0,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Richie Grant was selected 40 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p041",
+      "real_player_id": "104804",
+      "real_name": "Levi Onwuzurike",
+      "fake_name": "Malik Hale",
+      "draft_year": 2021,
+      "rank": 41,
+      "position": "DT",
+      "college_team": "Washington",
+      "conference": null,
+      "height": 75,
+      "weight": 290,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 95,
+        "Sacks": 7
+      },
+      "projected_round": 2,
+      "projected_pick": 41,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 9,
+        "overall": 41,
+        "team": "DET"
+      },
+      "career_summary": {
+        "games": 131,
+        "starts": 73,
+        "tackles": 248,
+        "sacks": 32
+      },
+      "career_value": 73.2,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Levi Onwuzurike was selected 41 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p042",
+      "real_player_id": "104827",
+      "real_name": "Liam Eichenberg",
+      "fake_name": "Marcus Foster",
+      "draft_year": 2021,
+      "rank": 42,
+      "position": "OT",
+      "college_team": "Notre Dame",
+      "conference": null,
+      "height": 78,
+      "weight": 306,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 2,
+      "projected_pick": 42,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 10,
+        "overall": 42,
+        "team": "MIA"
+      },
+      "career_summary": {
+        "games": 137,
+        "starts": 91,
+        "approximate_value": 76
+      },
+      "career_value": 76.4,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Liam Eichenberg was selected 42 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p043",
+      "real_player_id": "104755",
+      "real_name": "Trevon Moehrig",
+      "fake_name": "Jordan Hayes",
+      "draft_year": 2021,
+      "rank": 43,
+      "position": "S",
+      "college_team": "TCU",
+      "conference": null,
+      "height": 73,
+      "weight": 202,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 124,
+        "Interceptions": 7,
+        "Passes Defended": 21
+      },
+      "projected_round": 2,
+      "projected_pick": 43,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 11,
+        "overall": 43,
+        "team": "LV"
+      },
+      "career_summary": {
+        "games": 119,
+        "starts": 73,
+        "tackles": 366,
+        "sacks": 9,
+        "interceptions": 7
+      },
+      "career_value": 66.6,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Trevon Moehrig was selected 43 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p044",
+      "real_player_id": "105270",
+      "real_name": "Kelvin Joseph",
+      "fake_name": "Isaiah Sutton",
+      "draft_year": 2021,
+      "rank": 44,
+      "position": "CB",
+      "college_team": "Kentucky",
+      "conference": null,
+      "height": 72,
+      "weight": 197,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 37,
+        "Interceptions": 4,
+        "Passes Defended": 2
+      },
+      "projected_round": 2,
+      "projected_pick": 44,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 12,
+        "overall": 44,
+        "team": "DAL"
+      },
+      "career_summary": {
+        "games": 125,
+        "starts": 76,
+        "tackles": 383,
+        "sacks": 10,
+        "interceptions": 8
+      },
+      "career_value": 69.8,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Kelvin Joseph was selected 44 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p045",
+      "real_player_id": "104789",
+      "real_name": "Walker Little",
+      "fake_name": "Nolan Marshall",
+      "draft_year": 2021,
+      "rank": 45,
+      "position": "OT",
+      "college_team": "Stanford",
+      "conference": null,
+      "height": 79,
+      "weight": 313,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 2,
+      "projected_pick": 45,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 13,
+        "overall": 45,
+        "team": "JAX"
+      },
+      "career_summary": {
+        "games": 131,
+        "starts": 87,
+        "approximate_value": 73
+      },
+      "career_value": 73.0,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Walker Little was selected 45 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p046",
+      "real_player_id": "105279",
+      "real_name": "Jackson Carman",
+      "fake_name": "Bryce Griffin",
+      "draft_year": 2021,
+      "rank": 46,
+      "position": "OT",
+      "college_team": "Clemson",
+      "conference": null,
+      "height": 77,
+      "weight": 317,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 2,
+      "projected_pick": 46,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 14,
+        "overall": 46,
+        "team": "CIN"
+      },
+      "career_summary": {
+        "games": 113,
+        "starts": 75,
+        "approximate_value": 63
+      },
+      "career_value": 63.2,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Jackson Carman was selected 46 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p047",
+      "real_player_id": "105143",
+      "real_name": "Asante Samuel Jr.",
+      "fake_name": "Jordan Griffin",
+      "draft_year": 2021,
+      "rank": 47,
+      "position": "CB",
+      "college_team": "Florida State",
+      "conference": null,
+      "height": 70,
+      "weight": 180,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 93,
+        "Interceptions": 4,
+        "Passes Defended": 29
+      },
+      "projected_round": 2,
+      "projected_pick": 47,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 15,
+        "overall": 47,
+        "team": "LAC"
+      },
+      "career_summary": {
+        "games": 119,
+        "starts": 73,
+        "tackles": 365,
+        "sacks": 9,
+        "interceptions": 7
+      },
+      "career_value": 66.4,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Asante Samuel Jr. was selected 47 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p048",
+      "real_player_id": "105178",
+      "real_name": "Aaron Banks",
+      "fake_name": "Jordan Brooks",
+      "draft_year": 2021,
+      "rank": 48,
+      "position": "IOL",
+      "college_team": "Notre Dame",
+      "conference": null,
+      "height": 77,
+      "weight": 325,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 2,
+      "projected_pick": 48,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 16,
+        "overall": 48,
+        "team": "SF"
+      },
+      "career_summary": {
+        "games": 125,
+        "starts": 83,
+        "approximate_value": 69
+      },
+      "career_value": 69.6,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Aaron Banks was selected 48 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p049",
+      "real_player_id": "104779",
+      "real_name": "Rondale Moore",
+      "fake_name": "Jordan Griffin",
+      "draft_year": 2021,
+      "rank": 49,
+      "position": "WR",
+      "college_team": "Purdue",
+      "conference": null,
+      "height": 67,
+      "weight": 181,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 178,
+        "Receiving Yards": 1915,
+        "Receiving Touchdowns": 28
+      },
+      "projected_round": 2,
+      "projected_pick": 49,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 17,
+        "overall": 49,
+        "team": "ARI"
+      },
+      "career_summary": {
+        "games": 107,
+        "receptions": 287,
+        "receiving_yards": 3707,
+        "receiving_td": 29
+      },
+      "career_value": 59.8,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Rondale Moore was selected 49 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p050",
+      "real_player_id": "105162",
+      "real_name": "Azeez Ojulari",
+      "fake_name": "Quinn Marshall",
+      "draft_year": 2021,
+      "rank": 50,
+      "position": "EDGE",
+      "college_team": "Georgia",
+      "conference": null,
+      "height": 74,
+      "weight": 249,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 67,
+        "Sacks": 11
+      },
+      "projected_round": 2,
+      "projected_pick": 50,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 18,
+        "overall": 50,
+        "team": "NYG"
+      },
+      "career_summary": {
+        "games": 113,
+        "starts": 63,
+        "tackles": 214,
+        "sacks": 28
+      },
+      "career_value": 63.0,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Azeez Ojulari was selected 50 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p051",
+      "real_player_id": "104743",
+      "real_name": "Samuel Cosmi",
+      "fake_name": "Bryce Foster",
+      "draft_year": 2021,
+      "rank": 51,
+      "position": "OT",
+      "college_team": "Texas",
+      "conference": null,
+      "height": 78,
+      "weight": 314,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 2,
+      "projected_pick": 51,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 19,
+        "overall": 51,
+        "team": "WSH"
+      },
+      "career_summary": {
+        "games": 119,
+        "starts": 79,
+        "approximate_value": 66
+      },
+      "career_value": 66.2,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Samuel Cosmi was selected 51 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p052",
+      "real_player_id": "104749",
+      "real_name": "Jeremiah Owusu-Koramoah",
+      "fake_name": "Jalen Lawson",
+      "draft_year": 2021,
+      "rank": 52,
+      "position": "LB",
+      "college_team": "Notre Dame",
+      "conference": null,
+      "height": 74,
+      "weight": 221,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 134,
+        "Sacks": 10,
+        "Interceptions": 1
+      },
+      "projected_round": 2,
+      "projected_pick": 52,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 20,
+        "overall": 52,
+        "team": "CLE"
+      },
+      "career_summary": {
+        "games": 101,
+        "starts": 62,
+        "tackles": 310,
+        "sacks": 8,
+        "interceptions": 6
+      },
+      "career_value": 56.4,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Jeremiah Owusu-Koramoah was selected 52 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p053",
+      "real_player_id": "104787",
+      "real_name": "Dillon Radunz",
+      "fake_name": "Nolan Pierce",
+      "draft_year": 2021,
+      "rank": 53,
+      "position": "OT",
+      "college_team": "North Dakota State",
+      "conference": null,
+      "height": 78,
+      "weight": 301,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 2,
+      "projected_pick": 53,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 21,
+        "overall": 53,
+        "team": "TEN"
+      },
+      "career_summary": {
+        "games": 107,
+        "starts": 71,
+        "approximate_value": 59
+      },
+      "career_value": 59.6,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Dillon Radunz was selected 53 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p054",
+      "real_player_id": "104809",
+      "real_name": "Dayo Odeyingbo",
+      "fake_name": "Caleb Brooks",
+      "draft_year": 2021,
+      "rank": 54,
+      "position": "EDGE",
+      "college_team": "Vanderbilt",
+      "conference": null,
+      "height": 77,
+      "weight": 285,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 126,
+        "Sacks": 12
+      },
+      "projected_round": 2,
+      "projected_pick": 54,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 22,
+        "overall": 54,
+        "team": "IND"
+      },
+      "career_summary": {
+        "games": 113,
+        "starts": 62,
+        "tackles": 213,
+        "sacks": 28
+      },
+      "career_value": 62.8,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Dayo Odeyingbo was selected 54 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p055",
+      "real_player_id": "104757",
+      "real_name": "Pat Freiermuth",
+      "fake_name": "Evan Carter",
+      "draft_year": 2021,
+      "rank": 55,
+      "position": "TE",
+      "college_team": "Penn State",
+      "conference": null,
+      "height": 77,
+      "weight": 251,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 92,
+        "Receiving Yards": 1185,
+        "Receiving Touchdowns": 31
+      },
+      "projected_round": 2,
+      "projected_pick": 55,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 23,
+        "overall": 55,
+        "team": "PIT"
+      },
+      "career_summary": {
+        "games": 118,
+        "receptions": 316,
+        "receiving_yards": 4092,
+        "receiving_td": 33
+      },
+      "career_value": 66.0,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Pat Freiermuth was selected 55 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p056",
+      "real_player_id": "105167",
+      "real_name": "D'Wayne Eskridge",
+      "fake_name": "Darius Porter",
+      "draft_year": 2021,
+      "rank": 56,
+      "position": "WR",
+      "college_team": "Western Michigan",
+      "conference": null,
+      "height": 69,
+      "weight": 190,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 122,
+        "Receiving Yards": 2260,
+        "Receiving Touchdowns": 22
+      },
+      "projected_round": 2,
+      "projected_pick": 56,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 24,
+        "overall": 56,
+        "team": "SEA"
+      },
+      "career_summary": {
+        "games": 101,
+        "receptions": 269,
+        "receiving_yards": 3484,
+        "receiving_td": 28
+      },
+      "career_value": 56.2,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "D'Wayne Eskridge was selected 56 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p057",
+      "real_player_id": "104822",
+      "real_name": "Tutu Atwell",
+      "fake_name": "Miles Bishop",
+      "draft_year": 2021,
+      "rank": 57,
+      "position": "WR",
+      "college_team": "Louisville",
+      "conference": null,
+      "height": 69,
+      "weight": 155,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 140,
+        "Receiving Yards": 2307,
+        "Receiving Touchdowns": 35
+      },
+      "projected_round": 2,
+      "projected_pick": 57,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 25,
+        "overall": 57,
+        "team": "LAR"
+      },
+      "career_summary": {
+        "games": 106,
+        "receptions": 285,
+        "receiving_yards": 3682,
+        "receiving_td": 29
+      },
+      "career_value": 59.4,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Tutu Atwell was selected 57 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p058",
+      "real_player_id": "104934",
+      "real_name": "Nick Bolton",
+      "fake_name": "Bryce Warren",
+      "draft_year": 2021,
+      "rank": 58,
+      "position": "LB",
+      "college_team": "Missouri",
+      "conference": null,
+      "height": 71,
+      "weight": 237,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 217,
+        "Sacks": 4,
+        "Interceptions": 2
+      },
+      "projected_round": 2,
+      "projected_pick": 58,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 26,
+        "overall": 58,
+        "team": "KC"
+      },
+      "career_summary": {
+        "games": 112,
+        "starts": 68,
+        "tackles": 344,
+        "sacks": 9,
+        "interceptions": 7
+      },
+      "career_value": 62.6,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Nick Bolton was selected 58 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p059",
+      "real_player_id": "105140",
+      "real_name": "Terrace Marshall Jr.",
+      "fake_name": "Trey Hayes",
+      "draft_year": 2021,
+      "rank": 59,
+      "position": "WR",
+      "college_team": "LSU",
+      "conference": null,
+      "height": 75,
+      "weight": 205,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 106,
+        "Receiving Yards": 1594,
+        "Receiving Touchdowns": 36
+      },
+      "projected_round": 2,
+      "projected_pick": 59,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 27,
+        "overall": 59,
+        "team": "CAR"
+      },
+      "career_summary": {
+        "games": 95,
+        "receptions": 253,
+        "receiving_yards": 3273,
+        "receiving_td": 26
+      },
+      "career_value": 52.8,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Terrace Marshall Jr. was selected 59 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p060",
+      "real_player_id": "104769",
+      "real_name": "Pete Werner",
+      "fake_name": "Malik Sutton",
+      "draft_year": 2021,
+      "rank": 60,
+      "position": "LB",
+      "college_team": "Ohio State",
+      "conference": null,
+      "height": 75,
+      "weight": 238,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 168,
+        "Sacks": 4,
+        "Interceptions": 0
+      },
+      "projected_round": 2,
+      "projected_pick": 60,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 28,
+        "overall": 60,
+        "team": "NO"
+      },
+      "career_summary": {
+        "games": 100,
+        "starts": 61,
+        "tackles": 308,
+        "sacks": 8,
+        "interceptions": 6
+      },
+      "career_value": 56.0,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Pete Werner was selected 60 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p061",
+      "real_player_id": "104747",
+      "real_name": "Carlos Basham Jr.",
+      "fake_name": "Evan Sutton",
+      "draft_year": 2021,
+      "rank": 61,
+      "position": "EDGE",
+      "college_team": "Wake Forest",
+      "conference": null,
+      "height": 75,
+      "weight": 274,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 173,
+        "Sacks": 20
+      },
+      "projected_round": 2,
+      "projected_pick": 61,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 29,
+        "overall": 61,
+        "team": "BUF"
+      },
+      "career_summary": {
+        "games": 106,
+        "starts": 59,
+        "tackles": 201,
+        "sacks": 26
+      },
+      "career_value": 59.2,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Carlos Basham Jr. was selected 61 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p062",
+      "real_player_id": "104832",
+      "real_name": "Josh Myers",
+      "fake_name": "Dante Coleman",
+      "draft_year": 2021,
+      "rank": 62,
+      "position": "IOL",
+      "college_team": "Ohio State",
+      "conference": null,
+      "height": 77,
+      "weight": 310,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 2,
+      "projected_pick": 62,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 30,
+        "overall": 62,
+        "team": "GB"
+      },
+      "career_summary": {
+        "games": 88,
+        "starts": 59,
+        "approximate_value": 49
+      },
+      "career_value": 49.4,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Josh Myers was selected 62 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p063",
+      "real_player_id": "104819",
+      "real_name": "Creed Humphrey",
+      "fake_name": "Grant Warren",
+      "draft_year": 2021,
+      "rank": 63,
+      "position": "IOL",
+      "college_team": "Oklahoma",
+      "conference": null,
+      "height": 76,
+      "weight": 302,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 2,
+      "projected_pick": 63,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 31,
+        "overall": 63,
+        "team": "KC"
+      },
+      "career_summary": {
+        "games": 94,
+        "starts": 63,
+        "approximate_value": 52
+      },
+      "career_value": 52.6,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Creed Humphrey was selected 63 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p064",
+      "real_player_id": "105144",
+      "real_name": "Kyle Trask",
+      "fake_name": "Malik Hale",
+      "draft_year": 2021,
+      "rank": 64,
+      "position": "QB",
+      "college_team": "Florida",
+      "conference": null,
+      "height": 77,
+      "weight": 236,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Passing Yards": 7386,
+        "Passing Touchdowns": 95,
+        "Interceptions": 15,
+        "Rushing Yards": 54
+      },
+      "projected_round": 2,
+      "projected_pick": 64,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 2,
+        "pick": 32,
+        "overall": 64,
+        "team": "TB"
+      },
+      "career_summary": {
+        "games": 100,
+        "starts": 50,
+        "passing_yards": 23436,
+        "td": 122,
+        "int": 61
+      },
+      "career_value": 55.8,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Kyle Trask was selected 64 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p065",
+      "real_player_id": "104824",
+      "real_name": "Andre Cisco",
+      "fake_name": "Quinn Bennett",
+      "draft_year": 2021,
+      "rank": 65,
+      "position": "S",
+      "college_team": "Syracuse",
+      "conference": null,
+      "height": 73,
+      "weight": 216,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 136,
+        "Interceptions": 13,
+        "Passes Defended": 14
+      },
+      "projected_round": 3,
+      "projected_pick": 65,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 1,
+        "overall": 65,
+        "team": "JAX"
+      },
+      "career_summary": {
+        "games": 82,
+        "starts": 50,
+        "tackles": 253,
+        "sacks": 6,
+        "interceptions": 5
+      },
+      "career_value": 46.0,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Andre Cisco was selected 65 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p066",
+      "real_player_id": "104791",
+      "real_name": "Kellen Mond",
+      "fake_name": "Quinn Bishop",
+      "draft_year": 2021,
+      "rank": 66,
+      "position": "QB",
+      "college_team": "Texas A&M",
+      "conference": null,
+      "height": 75,
+      "weight": 211,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Passing Yards": 9661,
+        "Passing Touchdowns": 123,
+        "Interceptions": 27,
+        "Rushing Yards": 1608
+      },
+      "projected_round": 3,
+      "projected_pick": 66,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 2,
+        "overall": 66,
+        "team": "MIN"
+      },
+      "career_summary": {
+        "games": 88,
+        "starts": 44,
+        "passing_yards": 20664,
+        "td": 108,
+        "int": 54
+      },
+      "career_value": 49.2,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Kellen Mond was selected 66 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p067",
+      "real_player_id": "105275",
+      "real_name": "Davis Mills",
+      "fake_name": "Jalen Bishop",
+      "draft_year": 2021,
+      "rank": 67,
+      "position": "QB",
+      "college_team": "Stanford",
+      "conference": null,
+      "height": 76,
+      "weight": 217,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Passing Yards": 3468,
+        "Passing Touchdowns": 29,
+        "Interceptions": 8,
+        "Rushing Yards": 86
+      },
+      "projected_round": 3,
+      "projected_pick": 67,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 3,
+        "overall": 67,
+        "team": "HOU"
+      },
+      "career_summary": {
+        "games": 94,
+        "starts": 47,
+        "passing_yards": 22008,
+        "td": 115,
+        "int": 57
+      },
+      "career_value": 52.4,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Davis Mills was selected 67 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p068",
+      "real_player_id": "104800",
+      "real_name": "Jalen Mayfield",
+      "fake_name": "Quinn Lawson",
+      "draft_year": 2021,
+      "rank": 68,
+      "position": "OT",
+      "college_team": "Michigan",
+      "conference": null,
+      "height": 77,
+      "weight": 326,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 3,
+      "projected_pick": 68,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 4,
+        "overall": 68,
+        "team": "ATL"
+      },
+      "career_summary": {
+        "games": 100,
+        "starts": 66,
+        "approximate_value": 55
+      },
+      "career_value": 55.6,
+      "outcome_label": "Solid Starter",
+      "reveal_blurb": "Jalen Mayfield was selected 68 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p069",
+      "real_player_id": "104834",
+      "real_name": "Joseph Ossai",
+      "fake_name": "Grant Brooks",
+      "draft_year": 2021,
+      "rank": 69,
+      "position": "EDGE",
+      "college_team": "Texas",
+      "conference": null,
+      "height": 76,
+      "weight": 256,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 164,
+        "Sacks": 11
+      },
+      "projected_round": 3,
+      "projected_pick": 69,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 5,
+        "overall": 69,
+        "team": "CIN"
+      },
+      "career_summary": {
+        "games": 82,
+        "starts": 45,
+        "tackles": 155,
+        "sacks": 20
+      },
+      "career_value": 45.8,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Joseph Ossai was selected 69 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p070",
+      "real_player_id": "105304",
+      "real_name": "Brady Christensen",
+      "fake_name": "Dante Reed",
+      "draft_year": 2021,
+      "rank": 70,
+      "position": "OT",
+      "college_team": "BYU",
+      "conference": null,
+      "height": 77,
+      "weight": 302,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 3,
+      "projected_pick": 70,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 6,
+        "overall": 70,
+        "team": "CAR"
+      },
+      "career_summary": {
+        "games": 88,
+        "starts": 58,
+        "approximate_value": 49
+      },
+      "career_value": 49.0,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Brady Christensen was selected 70 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p071",
+      "real_player_id": "104893",
+      "real_name": "Aaron Robinson",
+      "fake_name": "Cole Bennett",
+      "draft_year": 2021,
+      "rank": 71,
+      "position": "CB",
+      "college_team": "UCF",
+      "conference": null,
+      "height": 72,
+      "weight": 186,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 109,
+        "Interceptions": 3,
+        "Passes Defended": 17
+      },
+      "projected_round": 3,
+      "projected_pick": 71,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 7,
+        "overall": 71,
+        "team": "NYG"
+      },
+      "career_summary": {
+        "games": 93,
+        "starts": 57,
+        "tackles": 287,
+        "sacks": 7,
+        "interceptions": 6
+      },
+      "career_value": 52.2,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Aaron Robinson was selected 71 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p072",
+      "real_player_id": "105272",
+      "real_name": "Alim McNeill",
+      "fake_name": "Jalen Sutton",
+      "draft_year": 2021,
+      "rank": 72,
+      "position": "DT",
+      "college_team": "NC State",
+      "conference": null,
+      "height": 74,
+      "weight": 317,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 77,
+        "Sacks": 10
+      },
+      "projected_round": 3,
+      "projected_pick": 72,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 8,
+        "overall": 72,
+        "team": "DET"
+      },
+      "career_summary": {
+        "games": 76,
+        "starts": 42,
+        "tackles": 144,
+        "sacks": 19
+      },
+      "career_value": 42.4,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Alim McNeill was selected 72 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p073",
+      "real_player_id": "105278",
+      "real_name": "Milton Williams",
+      "fake_name": "Jordan Marshall",
+      "draft_year": 2021,
+      "rank": 73,
+      "position": "DT",
+      "college_team": "Louisiana Tech",
+      "conference": null,
+      "height": 75,
+      "weight": 284,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 104,
+        "Sacks": 10
+      },
+      "projected_round": 3,
+      "projected_pick": 73,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 9,
+        "overall": 73,
+        "team": "PHI"
+      },
+      "career_summary": {
+        "games": 82,
+        "starts": 45,
+        "tackles": 155,
+        "sacks": 20
+      },
+      "career_value": 45.6,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Milton Williams was selected 73 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p074",
+      "real_player_id": "105213",
+      "real_name": "Benjamin St-Juste",
+      "fake_name": "Bryce Brooks",
+      "draft_year": 2021,
+      "rank": 74,
+      "position": "CB",
+      "college_team": "Minnesota",
+      "conference": null,
+      "height": 75,
+      "weight": 202,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 62,
+        "Interceptions": 0,
+        "Passes Defended": 13
+      },
+      "projected_round": 3,
+      "projected_pick": 74,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 10,
+        "overall": 74,
+        "team": "WSH"
+      },
+      "career_summary": {
+        "games": 87,
+        "starts": 53,
+        "tackles": 268,
+        "sacks": 7,
+        "interceptions": 5
+      },
+      "career_value": 48.8,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Benjamin St-Juste was selected 74 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p075",
+      "real_player_id": "104884",
+      "real_name": "Osa Odighizuwa",
+      "fake_name": "Quinn Sutton",
+      "draft_year": 2021,
+      "rank": 75,
+      "position": "DT",
+      "college_team": "UCLA",
+      "conference": null,
+      "height": 74,
+      "weight": 282,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 120,
+        "Sacks": 11
+      },
+      "projected_round": 3,
+      "projected_pick": 75,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 11,
+        "overall": 75,
+        "team": "DAL"
+      },
+      "career_summary": {
+        "games": 70,
+        "starts": 39,
+        "tackles": 132,
+        "sacks": 17
+      },
+      "career_value": 39.0,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Osa Odighizuwa was selected 75 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p076",
+      "real_player_id": "104762",
+      "real_name": "Paulson Adebo",
+      "fake_name": "Miles Coleman",
+      "draft_year": 2021,
+      "rank": 76,
+      "position": "CB",
+      "college_team": "Stanford",
+      "conference": null,
+      "height": 73,
+      "weight": 198,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 97,
+        "Interceptions": 8,
+        "Passes Defended": 27
+      },
+      "projected_round": 3,
+      "projected_pick": 76,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 12,
+        "overall": 76,
+        "team": "NO"
+      },
+      "career_summary": {
+        "games": 75,
+        "starts": 46,
+        "tackles": 232,
+        "sacks": 6,
+        "interceptions": 5
+      },
+      "career_value": 42.2,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Paulson Adebo was selected 76 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p077",
+      "real_player_id": "104837",
+      "real_name": "Josh Palmer",
+      "fake_name": "Cole Bennett",
+      "draft_year": 2021,
+      "rank": 77,
+      "position": "WR",
+      "college_team": "Tennessee",
+      "conference": null,
+      "height": 73,
+      "weight": 210,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 99,
+        "Receiving Yards": 1514,
+        "Receiving Touchdowns": 10
+      },
+      "projected_round": 3,
+      "projected_pick": 77,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 14,
+        "overall": 77,
+        "team": "LAC"
+      },
+      "career_summary": {
+        "games": 81,
+        "receptions": 217,
+        "receiving_yards": 2814,
+        "receiving_td": 22
+      },
+      "career_value": 45.4,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Josh Palmer was selected 77 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p078",
+      "real_player_id": "104808",
+      "real_name": "Chazz Surratt",
+      "fake_name": "Dante Hale",
+      "draft_year": 2021,
+      "rank": 78,
+      "position": "LB",
+      "college_team": "North Carolina",
+      "conference": null,
+      "height": 74,
+      "weight": 229,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 207,
+        "Sacks": 12,
+        "Interceptions": 8
+      },
+      "projected_round": 3,
+      "projected_pick": 78,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 15,
+        "overall": 78,
+        "team": "MIN"
+      },
+      "career_summary": {
+        "games": 64,
+        "starts": 39,
+        "tackles": 195,
+        "sacks": 5,
+        "interceptions": 4
+      },
+      "career_value": 35.6,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Chazz Surratt was selected 78 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p079",
+      "real_player_id": "105447",
+      "real_name": "Malcolm Koonce",
+      "fake_name": "Evan Bishop",
+      "draft_year": 2021,
+      "rank": 79,
+      "position": "EDGE",
+      "college_team": "Buffalo",
+      "conference": null,
+      "height": 74,
+      "weight": 249,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 109,
+        "Sacks": 18
+      },
+      "projected_round": 3,
+      "projected_pick": 79,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 16,
+        "overall": 79,
+        "team": "LV"
+      },
+      "career_summary": {
+        "games": 69,
+        "starts": 38,
+        "tackles": 131,
+        "sacks": 17
+      },
+      "career_value": 38.8,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Malcolm Koonce was selected 79 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p080",
+      "real_player_id": "104845",
+      "real_name": "Divine Deablo",
+      "fake_name": "Marcus Pierce",
+      "draft_year": 2021,
+      "rank": 80,
+      "position": "S",
+      "college_team": "Virginia Tech",
+      "conference": null,
+      "height": 75,
+      "weight": 226,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 205,
+        "Interceptions": 6,
+        "Passes Defended": 11
+      },
+      "projected_round": 3,
+      "projected_pick": 80,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 17,
+        "overall": 80,
+        "team": "LV"
+      },
+      "career_summary": {
+        "games": 75,
+        "starts": 46,
+        "tackles": 231,
+        "sacks": 6,
+        "interceptions": 5
+      },
+      "career_value": 42.0,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Divine Deablo was selected 80 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p081",
+      "real_player_id": "105163",
+      "real_name": "Hunter Long",
+      "fake_name": "Nolan Reed",
+      "draft_year": 2021,
+      "rank": 81,
+      "position": "TE",
+      "college_team": "Boston College",
+      "conference": null,
+      "height": 77,
+      "weight": 254,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 89,
+        "Receiving Yards": 1297,
+        "Receiving Touchdowns": 13
+      },
+      "projected_round": 3,
+      "projected_pick": 81,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 18,
+        "overall": 81,
+        "team": "MIA"
+      },
+      "career_summary": {
+        "games": 81,
+        "receptions": 216,
+        "receiving_yards": 2802,
+        "receiving_td": 22
+      },
+      "career_value": 45.2,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Hunter Long was selected 81 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p082",
+      "real_player_id": "105274",
+      "real_name": "Dyami Brown",
+      "fake_name": "Evan Hayes",
+      "draft_year": 2021,
+      "rank": 82,
+      "position": "WR",
+      "college_team": "North Carolina",
+      "conference": null,
+      "height": 73,
+      "weight": 189,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 123,
+        "Receiving Yards": 2306,
+        "Receiving Touchdowns": 34
+      },
+      "projected_round": 3,
+      "projected_pick": 82,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 19,
+        "overall": 82,
+        "team": "WSH"
+      },
+      "career_summary": {
+        "games": 63,
+        "receptions": 169,
+        "receiving_yards": 2194,
+        "receiving_td": 17
+      },
+      "career_value": 35.4,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Dyami Brown was selected 82 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p083",
+      "real_player_id": "105276",
+      "real_name": "Tommy Tremble",
+      "fake_name": "Marcus Foster",
+      "draft_year": 2021,
+      "rank": 83,
+      "position": "TE",
+      "college_team": "Notre Dame",
+      "conference": null,
+      "height": 75,
+      "weight": 241,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 35,
+        "Receiving Yards": 401,
+        "Receiving Touchdowns": 8
+      },
+      "projected_round": 3,
+      "projected_pick": 83,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 20,
+        "overall": 83,
+        "team": "CAR"
+      },
+      "career_summary": {
+        "games": 69,
+        "receptions": 185,
+        "receiving_yards": 2393,
+        "receiving_td": 19
+      },
+      "career_value": 38.6,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Tommy Tremble was selected 83 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p084",
+      "real_player_id": "104923",
+      "real_name": "Chauncey Golston",
+      "fake_name": "Jordan Coleman",
+      "draft_year": 2021,
+      "rank": 84,
+      "position": "EDGE",
+      "college_team": "Iowa",
+      "conference": null,
+      "height": 77,
+      "weight": 269,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 130,
+        "Sacks": 12
+      },
+      "projected_round": 3,
+      "projected_pick": 84,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 21,
+        "overall": 84,
+        "team": "DAL"
+      },
+      "career_summary": {
+        "games": 75,
+        "starts": 41,
+        "tackles": 142,
+        "sacks": 18
+      },
+      "career_value": 41.8,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Chauncey Golston was selected 84 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p085",
+      "real_player_id": "105190",
+      "real_name": "Amari Rodgers",
+      "fake_name": "Nolan Carter",
+      "draft_year": 2021,
+      "rank": 85,
+      "position": "WR",
+      "college_team": "Clemson",
+      "conference": null,
+      "height": 70,
+      "weight": 212,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 181,
+        "Receiving Yards": 2144,
+        "Receiving Touchdowns": 23
+      },
+      "projected_round": 3,
+      "projected_pick": 85,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 22,
+        "overall": 85,
+        "team": "GB"
+      },
+      "career_summary": {
+        "games": 57,
+        "receptions": 153,
+        "receiving_yards": 1984,
+        "receiving_td": 16
+      },
+      "career_value": 32.0,
+      "outcome_label": "Backup",
+      "reveal_blurb": "Amari Rodgers was selected 85 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p086",
+      "real_player_id": "104763",
+      "real_name": "Wyatt Davis",
+      "fake_name": "Bryce Hayes",
+      "draft_year": 2021,
+      "rank": 86,
+      "position": "IOL",
+      "college_team": "Ohio State",
+      "conference": null,
+      "height": 76,
+      "weight": 315,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 3,
+      "projected_pick": 86,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 23,
+        "overall": 86,
+        "team": "MIN"
+      },
+      "career_summary": {
+        "games": 63,
+        "starts": 42,
+        "approximate_value": 35
+      },
+      "career_value": 35.2,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Wyatt Davis was selected 86 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p087",
+      "real_player_id": "105421",
+      "real_name": "Kendrick Green",
+      "fake_name": "Cole Coleman",
+      "draft_year": 2021,
+      "rank": 87,
+      "position": "IOL",
+      "college_team": "Illinois",
+      "conference": null,
+      "height": 76,
+      "weight": 315,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 3,
+      "projected_pick": 87,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 24,
+        "overall": 87,
+        "team": "PIT"
+      },
+      "career_summary": {
+        "games": 69,
+        "starts": 46,
+        "approximate_value": 38
+      },
+      "career_value": 38.4,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Kendrick Green was selected 87 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p088",
+      "real_player_id": "104844",
+      "real_name": "Trey Sermon",
+      "fake_name": "Marcus Griffin",
+      "draft_year": 2021,
+      "rank": 88,
+      "position": "RB",
+      "college_team": "Ohio State",
+      "conference": null,
+      "height": 72,
+      "weight": 215,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Rushing Yards": 2946,
+        "Rushing Touchdowns": 48,
+        "Receiving Yards": 486,
+        "Receptions": 48
+      },
+      "projected_round": 3,
+      "projected_pick": 88,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 25,
+        "overall": 88,
+        "team": "SF"
+      },
+      "career_summary": {
+        "games": 51,
+        "rushing_yards": 2059,
+        "receiving_yards": 800,
+        "total_td": 22
+      },
+      "career_value": 28.6,
+      "outcome_label": "Backup",
+      "reveal_blurb": "Trey Sermon was selected 88 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p089",
+      "real_player_id": "104759",
+      "real_name": "Nico Collins",
+      "fake_name": "Miles Marshall",
+      "draft_year": 2021,
+      "rank": 89,
+      "position": "WR",
+      "college_team": "Michigan",
+      "conference": null,
+      "height": 76,
+      "weight": 215,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 78,
+        "Receiving Yards": 1388,
+        "Receiving Touchdowns": 26
+      },
+      "projected_round": 3,
+      "projected_pick": 89,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 26,
+        "overall": 89,
+        "team": "HOU"
+      },
+      "career_summary": {
+        "games": 57,
+        "receptions": 152,
+        "receiving_yards": 1971,
+        "receiving_td": 15
+      },
+      "career_value": 31.8,
+      "outcome_label": "Backup",
+      "reveal_blurb": "Nico Collins was selected 89 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p090",
+      "real_player_id": "104770",
+      "real_name": "Patrick Jones II",
+      "fake_name": "Cole Porter",
+      "draft_year": 2021,
+      "rank": 90,
+      "position": "EDGE",
+      "college_team": "Pittsburgh",
+      "conference": null,
+      "height": 76,
+      "weight": 261,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 115,
+        "Sacks": 21
+      },
+      "projected_round": 3,
+      "projected_pick": 90,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 27,
+        "overall": 90,
+        "team": "MIN"
+      },
+      "career_summary": {
+        "games": 63,
+        "starts": 35,
+        "tackles": 119,
+        "sacks": 15
+      },
+      "career_value": 35.0,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Patrick Jones II was selected 90 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p091",
+      "real_player_id": "105302",
+      "real_name": "Anthony Schwartz",
+      "fake_name": "Malik Marshall",
+      "draft_year": 2021,
+      "rank": 91,
+      "position": "WR",
+      "college_team": "Auburn",
+      "conference": null,
+      "height": 72,
+      "weight": 186,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 117,
+        "Receiving Yards": 1433,
+        "Receiving Touchdowns": 9
+      },
+      "projected_round": 3,
+      "projected_pick": 91,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 28,
+        "overall": 91,
+        "team": "CLE"
+      },
+      "career_summary": {
+        "games": 45,
+        "receptions": 120,
+        "receiving_yards": 1562,
+        "receiving_td": 12
+      },
+      "career_value": 25.2,
+      "outcome_label": "Backup",
+      "reveal_blurb": "Anthony Schwartz was selected 91 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p092",
+      "real_player_id": "104778",
+      "real_name": "Monty Rice",
+      "fake_name": "Cole Pierce",
+      "draft_year": 2021,
+      "rank": 92,
+      "position": "LB",
+      "college_team": "Georgia",
+      "conference": null,
+      "height": 72,
+      "weight": 233,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 219,
+        "Sacks": 2,
+        "Interceptions": 0
+      },
+      "projected_round": 3,
+      "projected_pick": 92,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 29,
+        "overall": 92,
+        "team": "TEN"
+      },
+      "career_summary": {
+        "games": 51,
+        "starts": 31,
+        "tackles": 156,
+        "sacks": 4,
+        "interceptions": 3
+      },
+      "career_value": 28.4,
+      "outcome_label": "Backup",
+      "reveal_blurb": "Monty Rice was selected 92 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p093",
+      "real_player_id": "104777",
+      "real_name": "Spencer Brown",
+      "fake_name": "Dante Coleman",
+      "draft_year": 2021,
+      "rank": 93,
+      "position": "OT",
+      "college_team": "Northern Iowa",
+      "conference": null,
+      "height": 80,
+      "weight": 311,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 3,
+      "projected_pick": 93,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 30,
+        "overall": 93,
+        "team": "BUF"
+      },
+      "career_summary": {
+        "games": 56,
+        "starts": 37,
+        "approximate_value": 31
+      },
+      "career_value": 31.6,
+      "outcome_label": "Backup",
+      "reveal_blurb": "Spencer Brown was selected 93 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p094",
+      "real_player_id": "105199",
+      "real_name": "Ben Cleveland",
+      "fake_name": "Grant Porter",
+      "draft_year": 2021,
+      "rank": 94,
+      "position": "IOL",
+      "college_team": "Georgia",
+      "conference": null,
+      "height": 78,
+      "weight": 343,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 3,
+      "projected_pick": 94,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 31,
+        "overall": 94,
+        "team": "BAL"
+      },
+      "career_summary": {
+        "games": 62,
+        "starts": 41,
+        "approximate_value": 34
+      },
+      "career_value": 34.8,
+      "outcome_label": "Contributor",
+      "reveal_blurb": "Ben Cleveland was selected 94 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p095",
+      "real_player_id": "105189",
+      "real_name": "Robert Hainsey",
+      "fake_name": "Evan Carter",
+      "draft_year": 2021,
+      "rank": 95,
+      "position": "OT",
+      "college_team": "Notre Dame",
+      "conference": null,
+      "height": 77,
+      "weight": 306,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 3,
+      "projected_pick": 95,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 32,
+        "overall": 95,
+        "team": "TB"
+      },
+      "career_summary": {
+        "games": 45,
+        "starts": 30,
+        "approximate_value": 25
+      },
+      "career_value": 25.0,
+      "outcome_label": "Backup",
+      "reveal_blurb": "Robert Hainsey was selected 95 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p096",
+      "real_player_id": "105269",
+      "real_name": "Ronnie Perkins",
+      "fake_name": "Cole Hayes",
+      "draft_year": 2021,
+      "rank": 96,
+      "position": "EDGE",
+      "college_team": "Oklahoma",
+      "conference": null,
+      "height": 75,
+      "weight": 253,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 95,
+        "Sacks": 16
+      },
+      "projected_round": 3,
+      "projected_pick": 96,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 33,
+        "overall": 96,
+        "team": "NE"
+      },
+      "career_summary": {
+        "games": 50,
+        "starts": 28,
+        "tackles": 95,
+        "sacks": 12
+      },
+      "career_value": 28.2,
+      "outcome_label": "Backup",
+      "reveal_blurb": "Ronnie Perkins was selected 96 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p097",
+      "real_player_id": "105180",
+      "real_name": "Tre' McKitty",
+      "fake_name": "Dante Pierce",
+      "draft_year": 2021,
+      "rank": 97,
+      "position": "TE",
+      "college_team": "Georgia",
+      "conference": null,
+      "height": 76,
+      "weight": 246,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 56,
+        "Receiving Yards": 628,
+        "Receiving Touchdowns": 5
+      },
+      "projected_round": 3,
+      "projected_pick": 97,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 34,
+        "overall": 97,
+        "team": "LAC"
+      },
+      "career_summary": {
+        "games": 56,
+        "receptions": 150,
+        "receiving_yards": 1946,
+        "receiving_td": 15
+      },
+      "career_value": 31.4,
+      "outcome_label": "Backup",
+      "reveal_blurb": "Tre' McKitty was selected 97 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p098",
+      "real_player_id": "105181",
+      "real_name": "Quinn Meinerz",
+      "fake_name": "Caleb Carter",
+      "draft_year": 2021,
+      "rank": 98,
+      "position": "IOL",
+      "college_team": "Wisconsin-Whitewater",
+      "conference": null,
+      "height": 75,
+      "weight": 320,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 3,
+      "projected_pick": 98,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 35,
+        "overall": 98,
+        "team": "DEN"
+      },
+      "career_summary": {
+        "games": 38,
+        "starts": 25,
+        "approximate_value": 21
+      },
+      "career_value": 21.6,
+      "outcome_label": "Backup",
+      "reveal_blurb": "Quinn Meinerz was selected 98 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p099",
+      "real_player_id": "105313",
+      "real_name": "Nahshon Wright",
+      "fake_name": "Isaiah Warren",
+      "draft_year": 2021,
+      "rank": 99,
+      "position": "CB",
+      "college_team": "Oregon State",
+      "conference": null,
+      "height": 76,
+      "weight": 183,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 64,
+        "Interceptions": 5,
+        "Passes Defended": 6
+      },
+      "projected_round": 3,
+      "projected_pick": 99,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 36,
+        "overall": 99,
+        "team": "DAL"
+      },
+      "career_summary": {
+        "games": 44,
+        "starts": 27,
+        "tackles": 136,
+        "sacks": 3,
+        "interceptions": 2
+      },
+      "career_value": 24.8,
+      "outcome_label": "Backup",
+      "reveal_blurb": "Nahshon Wright was selected 99 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p100",
+      "real_player_id": "104784",
+      "real_name": "Elijah Molden",
+      "fake_name": "Cole Marshall",
+      "draft_year": 2021,
+      "rank": 100,
+      "position": "CB",
+      "college_team": "Washington",
+      "conference": null,
+      "height": 70,
+      "weight": 192,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 153,
+        "Interceptions": 5,
+        "Passes Defended": 19
+      },
+      "projected_round": 3,
+      "projected_pick": 100,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 37,
+        "overall": 100,
+        "team": "TEN"
+      },
+      "career_summary": {
+        "games": 50,
+        "starts": 30,
+        "tackles": 154,
+        "sacks": 4,
+        "interceptions": 3
+      },
+      "career_value": 28.0,
+      "outcome_label": "Backup",
+      "reveal_blurb": "Elijah Molden was selected 100 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p101",
+      "real_player_id": "105166",
+      "real_name": "Ifeatu Melifonwu",
+      "fake_name": "Malik Bishop",
+      "draft_year": 2021,
+      "rank": 101,
+      "position": "CB",
+      "college_team": "Syracuse",
+      "conference": null,
+      "height": 75,
+      "weight": 205,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 89,
+        "Interceptions": 3,
+        "Passes Defended": 21
+      },
+      "projected_round": 3,
+      "projected_pick": 101,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 38,
+        "overall": 101,
+        "team": "DET"
+      },
+      "career_summary": {
+        "games": 32,
+        "starts": 20,
+        "tackles": 100,
+        "sacks": 2,
+        "interceptions": 2
+      },
+      "career_value": 18.2,
+      "outcome_label": "Backup",
+      "reveal_blurb": "Ifeatu Melifonwu was selected 101 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p102",
+      "real_player_id": "104817",
+      "real_name": "Ambry Thomas",
+      "fake_name": "Grant Coleman",
+      "draft_year": 2021,
+      "rank": 102,
+      "position": "CB",
+      "college_team": "Michigan",
+      "conference": null,
+      "height": 72,
+      "weight": 191,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 54,
+        "Interceptions": 4,
+        "Passes Defended": 3
+      },
+      "projected_round": 3,
+      "projected_pick": 102,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 39,
+        "overall": 102,
+        "team": "SF"
+      },
+      "career_summary": {
+        "games": 38,
+        "starts": 23,
+        "tackles": 117,
+        "sacks": 3,
+        "interceptions": 2
+      },
+      "career_value": 21.4,
+      "outcome_label": "Backup",
+      "reveal_blurb": "Ambry Thomas was selected 102 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p103",
+      "real_player_id": "105281",
+      "real_name": "Ernest Jones",
+      "fake_name": "Nolan Bishop",
+      "draft_year": 2021,
+      "rank": 103,
+      "position": "LB",
+      "college_team": "South Carolina",
+      "conference": null,
+      "height": 74,
+      "weight": 230,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 199,
+        "Sacks": 2,
+        "Interceptions": 2
+      },
+      "projected_round": 3,
+      "projected_pick": 103,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 40,
+        "overall": 103,
+        "team": "LAR"
+      },
+      "career_summary": {
+        "games": 44,
+        "starts": 27,
+        "tackles": 135,
+        "sacks": 3,
+        "interceptions": 2
+      },
+      "career_value": 24.6,
+      "outcome_label": "Backup",
+      "reveal_blurb": "Ernest Jones was selected 103 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p104",
+      "real_player_id": "105303",
+      "real_name": "Brandon Stephens",
+      "fake_name": "Marcus Griffin",
+      "draft_year": 2021,
+      "rank": 104,
+      "position": "CB",
+      "college_team": "SMU",
+      "conference": null,
+      "height": 72,
+      "weight": 213,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 92,
+        "Interceptions": 1,
+        "Passes Defended": 22
+      },
+      "projected_round": 3,
+      "projected_pick": 104,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 41,
+        "overall": 104,
+        "team": "BAL"
+      },
+      "career_summary": {
+        "games": 26,
+        "starts": 16,
+        "tackles": 81,
+        "sacks": 2,
+        "interceptions": 1
+      },
+      "career_value": 14.8,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Brandon Stephens was selected 104 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p105",
+      "real_player_id": "104785",
+      "real_name": "Baron Browning",
+      "fake_name": "Dante Hale",
+      "draft_year": 2021,
+      "rank": 105,
+      "position": "EDGE",
+      "college_team": "Ohio State",
+      "conference": null,
+      "height": 75,
+      "weight": 245,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 102,
+        "Sacks": 6
+      },
+      "projected_round": 3,
+      "projected_pick": 105,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 3,
+        "pick": 42,
+        "overall": 105,
+        "team": "DEN"
+      },
+      "career_summary": {
+        "games": 32,
+        "starts": 18,
+        "tackles": 61,
+        "sacks": 8
+      },
+      "career_value": 18.0,
+      "outcome_label": "Backup",
+      "reveal_blurb": "Baron Browning was selected 105 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p106",
+      "real_player_id": "104768",
+      "real_name": "Jay Tufele",
+      "fake_name": "Isaiah Coleman",
+      "draft_year": 2021,
+      "rank": 106,
+      "position": "DT",
+      "college_team": "USC",
+      "conference": null,
+      "height": 74,
+      "weight": 305,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 65,
+        "Sacks": 7
+      },
+      "projected_round": 4,
+      "projected_pick": 106,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 1,
+        "overall": 106,
+        "team": "JAX"
+      },
+      "career_summary": {
+        "games": 38,
+        "starts": 21,
+        "tackles": 72,
+        "sacks": 9
+      },
+      "career_value": 21.2,
+      "outcome_label": "Backup",
+      "reveal_blurb": "Jay Tufele was selected 106 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p107",
+      "real_player_id": "104826",
+      "real_name": "Michael Carter",
+      "fake_name": "Bryce Pierce",
+      "draft_year": 2021,
+      "rank": 107,
+      "position": "RB",
+      "college_team": "North Carolina",
+      "conference": null,
+      "height": 68,
+      "weight": 201,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Rushing Yards": 3403,
+        "Rushing Touchdowns": 35,
+        "Receiving Yards": 656,
+        "Receptions": 82
+      },
+      "projected_round": 4,
+      "projected_pick": 107,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 2,
+        "overall": 107,
+        "team": "NYJ"
+      },
+      "career_summary": {
+        "games": 43,
+        "rushing_yards": 1756,
+        "receiving_yards": 683,
+        "total_td": 19
+      },
+      "career_value": 24.4,
+      "outcome_label": "Backup",
+      "reveal_blurb": "Michael Carter was selected 107 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p108",
+      "real_player_id": "105209",
+      "real_name": "Darren Hall",
+      "fake_name": "Caleb Bishop",
+      "draft_year": 2021,
+      "rank": 108,
+      "position": "CB",
+      "college_team": "San Diego State",
+      "conference": null,
+      "height": 71,
+      "weight": 188,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 135,
+        "Interceptions": 6,
+        "Passes Defended": 25
+      },
+      "projected_round": 4,
+      "projected_pick": 108,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 3,
+        "overall": 108,
+        "team": "ATL"
+      },
+      "career_summary": {
+        "games": 26,
+        "starts": 16,
+        "tackles": 80,
+        "sacks": 2,
+        "interceptions": 1
+      },
+      "career_value": 14.6,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Darren Hall was selected 108 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p109",
+      "real_player_id": "105171",
+      "real_name": "Dez Fitzpatrick",
+      "fake_name": "Isaiah Reed",
+      "draft_year": 2021,
+      "rank": 109,
+      "position": "WR",
+      "college_team": "Louisville",
+      "conference": null,
+      "height": 74,
+      "weight": 208,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 154,
+        "Receiving Yards": 2589,
+        "Receiving Touchdowns": 39
+      },
+      "projected_round": 4,
+      "projected_pick": 109,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 4,
+        "overall": 109,
+        "team": "TEN"
+      },
+      "career_summary": {
+        "games": 32,
+        "receptions": 85,
+        "receiving_yards": 1103,
+        "receiving_td": 8
+      },
+      "career_value": 17.8,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Dez Fitzpatrick was selected 109 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p110",
+      "real_player_id": "105164",
+      "real_name": "James Hudson",
+      "fake_name": "Nolan Reed",
+      "draft_year": 2021,
+      "rank": 110,
+      "position": "OT",
+      "college_team": "Cincinnati",
+      "conference": null,
+      "height": 77,
+      "weight": 313,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 4,
+      "projected_pick": 110,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 5,
+        "overall": 110,
+        "team": "CLE"
+      },
+      "career_summary": {
+        "games": 37,
+        "starts": 25,
+        "approximate_value": 21
+      },
+      "career_value": 21.0,
+      "outcome_label": "Backup",
+      "reveal_blurb": "James Hudson was selected 110 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p111",
+      "real_player_id": "105201",
+      "real_name": "Cameron Sample",
+      "fake_name": "Miles Griffin",
+      "draft_year": 2021,
+      "rank": 111,
+      "position": "EDGE",
+      "college_team": "Tulane",
+      "conference": null,
+      "height": 75,
+      "weight": 267,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 162,
+        "Sacks": 10
+      },
+      "projected_round": 4,
+      "projected_pick": 111,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 6,
+        "overall": 111,
+        "team": "CIN"
+      },
+      "career_summary": {
+        "games": 20,
+        "starts": 11,
+        "tackles": 38,
+        "sacks": 5
+      },
+      "career_value": 11.2,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Cameron Sample was selected 111 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p112",
+      "real_player_id": "105283",
+      "real_name": "Amon-Ra St. Brown",
+      "fake_name": "Caleb Pierce",
+      "draft_year": 2021,
+      "rank": 112,
+      "position": "WR",
+      "college_team": "USC",
+      "conference": null,
+      "height": 72,
+      "weight": 197,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 178,
+        "Receiving Yards": 2270,
+        "Receiving Touchdowns": 25
+      },
+      "projected_round": 4,
+      "projected_pick": 112,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 7,
+        "overall": 112,
+        "team": "DET"
+      },
+      "career_summary": {
+        "games": 25,
+        "receptions": 69,
+        "receiving_yards": 892,
+        "receiving_td": 7
+      },
+      "career_value": 14.4,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Amon-Ra St. Brown was selected 112 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p113",
+      "real_player_id": "105212",
+      "real_name": "Derrick Barnes",
+      "fake_name": "Dante Reed",
+      "draft_year": 2021,
+      "rank": 113,
+      "position": "LB",
+      "college_team": "Purdue",
+      "conference": null,
+      "height": 72,
+      "weight": 238,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 226,
+        "Sacks": 10,
+        "Interceptions": 1
+      },
+      "projected_round": 4,
+      "projected_pick": 113,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 8,
+        "overall": 113,
+        "team": "DET"
+      },
+      "career_summary": {
+        "games": 31,
+        "starts": 19,
+        "tackles": 96,
+        "sacks": 2,
+        "interceptions": 2
+      },
+      "career_value": 17.6,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Derrick Barnes was selected 113 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p114",
+      "real_player_id": "105287",
+      "real_name": "Drew Dalman",
+      "fake_name": "Darius Pierce",
+      "draft_year": 2021,
+      "rank": 114,
+      "position": "IOL",
+      "college_team": "Stanford",
+      "conference": null,
+      "height": 75,
+      "weight": 299,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 4,
+      "projected_pick": 114,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 9,
+        "overall": 114,
+        "team": "ATL"
+      },
+      "career_summary": {
+        "games": 14,
+        "starts": 9,
+        "approximate_value": 7
+      },
+      "career_value": 7.8,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Drew Dalman was selected 114 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p115",
+      "real_player_id": "104754",
+      "real_name": "Jabril Cox",
+      "fake_name": "Cole Porter",
+      "draft_year": 2021,
+      "rank": 115,
+      "position": "LB",
+      "college_team": "LSU",
+      "conference": null,
+      "height": 75,
+      "weight": 232,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 58,
+        "Sacks": 1,
+        "Interceptions": 9
+      },
+      "projected_round": 4,
+      "projected_pick": 115,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 10,
+        "overall": 115,
+        "team": "DAL"
+      },
+      "career_summary": {
+        "games": 19,
+        "starts": 12,
+        "tackles": 60,
+        "sacks": 1,
+        "interceptions": 1
+      },
+      "career_value": 11.0,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Jabril Cox was selected 115 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p116",
+      "real_player_id": "104916",
+      "real_name": "Elerson Smith",
+      "fake_name": "Cole Reed",
+      "draft_year": 2021,
+      "rank": 116,
+      "position": "EDGE",
+      "college_team": "Northern Iowa",
+      "conference": null,
+      "height": 78,
+      "weight": 252,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 6,
+        "Sacks": 1
+      },
+      "projected_round": 4,
+      "projected_pick": 116,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 11,
+        "overall": 116,
+        "team": "NYG"
+      },
+      "career_summary": {
+        "games": 25,
+        "starts": 14,
+        "tackles": 48,
+        "sacks": 6
+      },
+      "career_value": 14.2,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Elerson Smith was selected 116 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p117",
+      "real_player_id": "105280",
+      "real_name": "Bobby Brown III",
+      "fake_name": "Evan Reed",
+      "draft_year": 2021,
+      "rank": 117,
+      "position": "DT",
+      "college_team": "Texas A&M",
+      "conference": null,
+      "height": 76,
+      "weight": 321,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 55,
+        "Sacks": 6
+      },
+      "projected_round": 4,
+      "projected_pick": 117,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 12,
+        "overall": 117,
+        "team": "LAR"
+      },
+      "career_summary": {
+        "games": 9,
+        "starts": 5,
+        "tackles": 17,
+        "sacks": 2
+      },
+      "career_value": 5,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Bobby Brown III was selected 117 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p118",
+      "real_player_id": "104767",
+      "real_name": "Chris Rumph II",
+      "fake_name": "Jalen Bishop",
+      "draft_year": 2021,
+      "rank": 118,
+      "position": "EDGE",
+      "college_team": "Duke",
+      "conference": null,
+      "height": 75,
+      "weight": 244,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 125,
+        "Sacks": 17
+      },
+      "projected_round": 4,
+      "projected_pick": 118,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 13,
+        "overall": 118,
+        "team": "LAC"
+      },
+      "career_summary": {
+        "games": 13,
+        "starts": 7,
+        "tackles": 25,
+        "sacks": 3
+      },
+      "career_value": 7.6,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Chris Rumph II was selected 118 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p119",
+      "real_player_id": "105481",
+      "real_name": "Kene Nwangwu",
+      "fake_name": "Malik Carter",
+      "draft_year": 2021,
+      "rank": 119,
+      "position": "RB",
+      "college_team": "Iowa State",
+      "conference": null,
+      "height": 73,
+      "weight": 210,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 4,
+      "projected_pick": 119,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 14,
+        "overall": 119,
+        "team": "MIN"
+      },
+      "career_summary": {
+        "games": 19,
+        "rushing_yards": 777,
+        "receiving_yards": 302,
+        "total_td": 8
+      },
+      "career_value": 10.8,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Kene Nwangwu was selected 119 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p120",
+      "real_player_id": "105165",
+      "real_name": "Rhamondre Stevenson",
+      "fake_name": "Evan Bennett",
+      "draft_year": 2021,
+      "rank": 120,
+      "position": "RB",
+      "college_team": "Oklahoma",
+      "conference": null,
+      "height": 72,
+      "weight": 231,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Rushing Yards": 1180,
+        "Rushing Touchdowns": 19,
+        "Receiving Yards": 298,
+        "Receptions": 28
+      },
+      "projected_round": 4,
+      "projected_pick": 120,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 15,
+        "overall": 120,
+        "team": "NE"
+      },
+      "career_summary": {
+        "games": 25,
+        "rushing_yards": 1008,
+        "receiving_yards": 392,
+        "total_td": 11
+      },
+      "career_value": 14.0,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Rhamondre Stevenson was selected 120 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p121",
+      "real_player_id": "105169",
+      "real_name": "Jordan Smith",
+      "fake_name": "Evan Bennett",
+      "draft_year": 2021,
+      "rank": 121,
+      "position": "EDGE",
+      "college_team": "UAB",
+      "conference": null,
+      "height": 78,
+      "weight": 264,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 94,
+        "Sacks": 14
+      },
+      "projected_round": 4,
+      "projected_pick": 121,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 16,
+        "overall": 121,
+        "team": "JAX"
+      },
+      "career_summary": {
+        "games": 9,
+        "starts": 5,
+        "tackles": 17,
+        "sacks": 2
+      },
+      "career_value": 5,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Jordan Smith was selected 121 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p122",
+      "real_player_id": "104756",
+      "real_name": "Tyler Shelvin",
+      "fake_name": "Malik Carter",
+      "draft_year": 2021,
+      "rank": 122,
+      "position": "DT",
+      "college_team": "LSU",
+      "conference": null,
+      "height": 74,
+      "weight": 350,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 48,
+        "Sacks": 1
+      },
+      "projected_round": 4,
+      "projected_pick": 122,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 17,
+        "overall": 122,
+        "team": "CIN"
+      },
+      "career_summary": {
+        "games": 13,
+        "starts": 7,
+        "tackles": 25,
+        "sacks": 3
+      },
+      "career_value": 7.4,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Tyler Shelvin was selected 122 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p123",
+      "real_player_id": "105438",
+      "real_name": "Zech McPhearson",
+      "fake_name": "Jalen Lawson",
+      "draft_year": 2021,
+      "rank": 123,
+      "position": "CB",
+      "college_team": "Texas Tech",
+      "conference": null,
+      "height": 71,
+      "weight": 191,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 121,
+        "Interceptions": 4,
+        "Passes Defended": 14
+      },
+      "projected_round": 4,
+      "projected_pick": 123,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 18,
+        "overall": 123,
+        "team": "PHI"
+      },
+      "career_summary": {
+        "games": 19,
+        "starts": 11,
+        "tackles": 58,
+        "sacks": 1,
+        "interceptions": 1
+      },
+      "career_value": 10.6,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Zech McPhearson was selected 123 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p124",
+      "real_player_id": "105423",
+      "real_name": "John Bates",
+      "fake_name": "Miles Carter",
+      "draft_year": 2021,
+      "rank": 124,
+      "position": "TE",
+      "college_team": "Boise State",
+      "conference": null,
+      "height": 77,
+      "weight": 250,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 47,
+        "Receiving Yards": 579,
+        "Receiving Touchdowns": 4
+      },
+      "projected_round": 4,
+      "projected_pick": 124,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 19,
+        "overall": 124,
+        "team": "WSH"
+      },
+      "career_summary": {
+        "games": 9,
+        "receptions": 24,
+        "receiving_yards": 310,
+        "receiving_td": 2
+      },
+      "career_value": 5,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "John Bates was selected 124 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p125",
+      "real_player_id": "104811",
+      "real_name": "Camryn Bynum",
+      "fake_name": "Isaiah Coleman",
+      "draft_year": 2021,
+      "rank": 125,
+      "position": "CB",
+      "college_team": "California",
+      "conference": null,
+      "height": 72,
+      "weight": 196,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Total Tackles": 183,
+        "Interceptions": 6,
+        "Passes Defended": 28
+      },
+      "projected_round": 4,
+      "projected_pick": 125,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 20,
+        "overall": 125,
+        "team": "MIN"
+      },
+      "career_summary": {
+        "games": 9,
+        "starts": 5,
+        "tackles": 27,
+        "sacks": 0,
+        "interceptions": 0
+      },
+      "career_value": 5,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Camryn Bynum was selected 125 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p126",
+      "real_player_id": "104765",
+      "real_name": "Chuba Hubbard",
+      "fake_name": "Grant Reed",
+      "draft_year": 2021,
+      "rank": 126,
+      "position": "RB",
+      "college_team": "Oklahoma State",
+      "conference": null,
+      "height": 72,
+      "weight": 210,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Rushing Yards": 3459,
+        "Rushing Touchdowns": 61,
+        "Receiving Yards": 479,
+        "Receptions": 53
+      },
+      "projected_round": 4,
+      "projected_pick": 126,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 21,
+        "overall": 126,
+        "team": "CAR"
+      },
+      "career_summary": {
+        "games": 12,
+        "rushing_yards": 518,
+        "receiving_yards": 201,
+        "total_td": 5
+      },
+      "career_value": 7.2,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Chuba Hubbard was selected 126 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p127",
+      "real_player_id": "105195",
+      "real_name": "Kylen Granson",
+      "fake_name": "Nolan Reed",
+      "draft_year": 2021,
+      "rank": 127,
+      "position": "TE",
+      "college_team": "SMU",
+      "conference": null,
+      "height": 74,
+      "weight": 241,
+      "combine_summary": "Not available",
+      "college_stats": {
+        "Receptions": 129,
+        "Receiving Yards": 1879,
+        "Receiving Touchdowns": 27
+      },
+      "projected_round": 4,
+      "projected_pick": 127,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 22,
+        "overall": 127,
+        "team": "IND"
+      },
+      "career_summary": {
+        "games": 9,
+        "receptions": 24,
+        "receiving_yards": 310,
+        "receiving_td": 2
+      },
+      "career_value": 5,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Kylen Granson was selected 127 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    },
+    {
+      "hidden_id": "p128",
+      "real_player_id": "105168",
+      "real_name": "Dan Moore Jr.",
+      "fake_name": "Jordan Marshall",
+      "draft_year": 2021,
+      "rank": 128,
+      "position": "OT",
+      "college_team": "Texas A&M",
+      "conference": null,
+      "height": 78,
+      "weight": 311,
+      "combine_summary": "Not available",
+      "college_stats": {},
+      "projected_round": 4,
+      "projected_pick": 128,
+      "scouting_blurb": "College production and traits profile available. Real identity is hidden until reveal.",
+      "actual_draft": {
+        "year": 2021,
+        "round": 4,
+        "pick": 23,
+        "overall": 128,
+        "team": "PIT"
+      },
+      "career_summary": {
+        "games": 9,
+        "starts": 6,
+        "approximate_value": 5
+      },
+      "career_value": 5,
+      "outcome_label": "Bust/Minimal NFL impact",
+      "reveal_blurb": "Dan Moore Jr. was selected 128 overall in the 2021 NFL Draft. Sample career totals are cached for offline MVP play."
+    }
+  ]
+}
